@@ -1,0 +1,189 @@
+ .email_num input , .login_num input, .password_num input{
+    width: 15px;
+    height: 20px;
+     margin-right: 3px;
+    padding: 0;
+     text-align: center;
+
+}
+ .email, .login, .password {
+     display: flex;
+
+ }
+
+ /*@media screen and (max-width:1000px){*/
+ /*    body{*/
+
+ /*        width: 1000px;*/
+ /*    }*/
+ /*    body * {*/
+ /*        font-size: 20px;*/
+ /*    }*/
+ /*    !*Далее остальные стили*!*/
+ /*}*/
+
+
+
+
+
+
+
+/*ul {*/
+/* */
+/*    margin: auto; !* Выравниваем по центру *!*/
+/*    background: #FF4444;*/
+/*    list-style: none; !*убираем маркеры списка*!*/
+
+/*    padding-left: 0; !*убираем отступы*!*/
+/*    margin-top:25px; !*делаем отступ сверху*!*/
+/*}*/
+/*menu {*/
+/*    height: inherit;*/
+/*    width: inherit;*/
+/*    margin: auto; !* Выравниваем по центру *!*/
+/*    text-align: center;*/
+
+/*}*/
+
+/*a {*/
+/*    text-decoration: none; !*убираем подчеркивание текста ссылок*!*/
+/*    background:#30A8E6; !*добавляем фон к пункту меню*!*/
+/*    color:#fff; !*меняем цвет ссылок*!*/
+/*    padding:10px; !*добавляем отступ*!*/
+/*    font-family: arial; !*меняем шрифт*!*/
+/*    border-radius:4px; !*добавляем скругление*!*/
+/*    -moz-transition: all 0.3s 0.01s ease; !*делаем плавный переход*!*/
+/*    -o-transition: all 0.3s 0.01s ease;*/
+/*    -webkit-transition: all 0.3s 0.01s ease;*/
+/*}*/
+/*a:hover {*/
+/*    background:#1C85BB;!*добавляем эффект при наведении*!*/
+/*}*/
+/*li {*/
+/*    float:left; !*Размещаем список горизонтально для реализации меню*!*/
+/*    margin-right:5px; !*Добавляем отступ у пунктов меню*!*/
+
+/*}*/
+/*.content {*/
+/*    !*width: 200px; !* Ширина элемента в пикселах *!*!*/
+/*    height: inherit;*/
+/*    max-width: 75%;*/
+/*    padding: 10px; !* Поля вокруг текста *!*/
+/*    margin: auto; !* Выравниваем по центру *!*/
+/*    background: #fc0; !* Цвет фона *!*/
+/*}*/
+
+/*----------------------------------------*/
+
+
+/**{*/
+/*    box-sizing: border-box;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*li, a, button{*/
+/*    font-size: 16px;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*header{*/
+/*    width: 800px;*/
+/*    margin: auto;*/
+/*    display: flex;*/
+/*    justify-content: space-between; !*Одинаковое растояние между элементами*!*/
+/*    align-items: center;*/
+/*    padding: 30px 10%;*/
+/*    height: 50px;*/
+/*    background: #106f03;*/
+
+/*}*/
+
+/*.logo{*/
+/*    cursor: pointer; !*Что бы курсор был палец*!*/
+/*    height: 50px;*/
+/*}*/
+
+/*.nav_menu{*/
+/*    list-style: none;*/
+
+/*}*/
+/*.nav_menu li{*/
+/*    display:  inline-block;*/
+/*    padding:  20px 30px;*/
+
+/*}*/
+
+/*.nav_menu li a {*/
+/*    transition: all .3s ease 0s; !*Анимация*!*/
+/*}*/
+
+/*.nav_menu li a:hover {*/
+/*    color: #108903;*/
+
+/*}*/
+
+/*button{*/
+/*    padding: 9px 25px;*/
+/*    background-color: #106f03;*/
+/*    border: none;*/
+/*    border-radius: 50px;*/
+/*    cursor:pointer;*/
+/*    transition: all .3s ease 0s;*/
+/*}*/
+
+/*button:hover{*/
+/*    background-color: #108903;*/
+/*}*/
+
+
+.nav_menu *{
+    margin: 0;
+    padding: 0;
+}
+
+.nav_menu ul, .nav_menu ol{
+    list-style: none;
+}
+
+.nav_menu > ul{
+    display: flex;
+    justify-content: center;
+}
+
+
+header{
+    margin: auto;
+    background-color: forestgreen;
+    width: 1000px;
+    height: 100%;
+    font-family: Cuprum, Arial, Helvetica, sans-serif;
+}
+
+.nav_menu > ul li a{
+    display: block;
+    background: #ececed;
+    padding: 15px 30px 15px 40px;
+    font-size: 14px;
+    color: #454547;
+    text-decoration: none;
+    text-transform:uppercase;
+}
+
+.nav_menu > ul li{
+    position: relative;
+}
+
+.nav_menu > ul li > a i.fa{
+    position: absolute;
+    top: 15px;
+    left: 12px;
+    font-size: 18px;
+}
+
+.nav_menu li a:hover{
+    background: #454547;
+    color: #ffffff;
+    box-shadow: 1px 5px 10px -5px black;
+    transition: all 0.3s ease;
+}
