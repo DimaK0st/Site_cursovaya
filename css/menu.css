@@ -8,24 +8,52 @@
 }
  .email, .login, .password {
      display: flex;
-
  }
 
- /*@media screen and (max-width:1000px){*/
- /*    body{*/
 
- /*        width: 1000px;*/
- /*    }*/
- /*    body * {*/
- /*        font-size: 20px;*/
- /*    }*/
- /*    !*Далее остальные стили*!*/
- /*}*/
+ .generator{
+     margin-left: auto;
+     margin-right: auto;
+     width: 75%;
+    background-color: darkslategrey;
+ }
 
 
 
-
-
+ #navbar ul{
+     display: none;
+     background-color: #f90;
+     position: absolute;
+     top: 100%;
+ }
+ #navbar li:hover ul { display: block; }
+ #navbar, #navbar ul{
+     margin: 0;
+     padding: 0;
+     list-style-type: none;
+ }
+ #navbar {
+     height: 30px;
+     background-color: #666;
+     padding-left: 25px;
+     min-width: 470px;
+ }
+ #navbar li {
+     float: left;
+     position: relative;
+     height: 100%;
+ }
+ #navbar li a {
+     display: block;
+     padding: 6px;
+     width: 100px;
+     color: #fff;
+     text-decoration: none;
+     text-align: center;
+ }
+ #navbar ul li { float: none; }
+ #navbar li:hover { background-color: #f90; }
+ #navbar ul li:hover { background-color: #666; }
 
 
 /*ul {*/
@@ -136,54 +164,3 @@
 /*    background-color: #108903;*/
 /*}*/
 
-
-.nav_menu *{
-    margin: 0;
-    padding: 0;
-}
-
-.nav_menu ul, .nav_menu ol{
-    list-style: none;
-}
-
-.nav_menu > ul{
-    display: flex;
-    justify-content: center;
-}
-
-
-header{
-    margin: auto;
-    background-color: forestgreen;
-    width: 1000px;
-    height: 100%;
-    font-family: Cuprum, Arial, Helvetica, sans-serif;
-}
-
-.nav_menu > ul li a{
-    display: block;
-    background: #ececed;
-    padding: 15px 30px 15px 40px;
-    font-size: 14px;
-    color: #454547;
-    text-decoration: none;
-    text-transform:uppercase;
-}
-
-.nav_menu > ul li{
-    position: relative;
-}
-
-.nav_menu > ul li > a i.fa{
-    position: absolute;
-    top: 15px;
-    left: 12px;
-    font-size: 18px;
-}
-
-.nav_menu li a:hover{
-    background: #454547;
-    color: #ffffff;
-    box-shadow: 1px 5px 10px -5px black;
-    transition: all 0.3s ease;
-}
