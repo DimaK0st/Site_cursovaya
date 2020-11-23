@@ -3,82 +3,82 @@ body {
     background-color: #000000;
 }
 
-*{
+* {
     font-size: 17px;
-     margin: 0;
-     padding: 0;
-     outline: none;
- }
-
- * input[type=text]{
-     outline: none;
-     border: none;
-     border: solid 1px #6a6a6a;
-     background-color:  #e5eae2;
- }
-* input[type=text]{
-    width: calc(100% - 200px);
-    display: inline-block;
- }
- .generator span{
-     margin-top: 10px;
-     margin-bottom: 3px;
-     font-size: 16px;
-     display: flex;
-     flex-wrap: wrap;
-
- }
-
-
-.email_num input , .login_num input, .password_num input{
-    width: 15px;
-    height: 20px;
-     margin-right: 3px;
+    margin: 0;
     padding: 0;
-     text-align: center;
+    outline: none;
+}
 
+* input[type=text] {
+    margin-top: 2px;
+    outline: none;
+    border: none;
+    width: calc(100%);
+    border: solid 1px #6a6a6a;
+    background-color: rgb(57, 174, 207);
+}
+
+* input[type=button], * input[type=submit], * input[type=reset] {
+    background-color: rgb(72, 203, 142);
+    margin-top: 10px;
+width: 220px;
+}
+
+.login_num [type=text], .password_num [type=text], .email_num [type=text]{
+    width: 65px;
+    height: 20px;
+    margin-right: 3px;
+    padding: 0;
+    text-align: center;
+}
+
+
+/*.login .login_num, .email .email_num, .password .password_num{*/
+/*    display: flex;*/
+/*}*/
+
+.generator {
+
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 54%;
+    background-color: #06799f;
+
+    padding-bottom: 10px;
+    border-radius: 0 0 10px 10px;
 
 }
- .email .email_inputer, .login .login_inputer, .password .password_inputer {
-
-     display: flex;
- }
-
-
- .generator{
-
-     -moz-box-sizing: border-box; /* Для Firefox */
-     padding-left: 3%;
-     margin-left: auto;
-     margin-right: auto;
-     width: 57%;
-     background-color: #06799f;
- }
 
 #head_main {
-    background: rgb(46,95,122);
+    background: rgb(46, 95, 122);
     border-radius: 10px 10px 0 0;
 }
- #head_main, #head_main li {
-     padding: 0;
-     width: 60%;
-     margin: auto;
- }
 
- #head_main li {
-     display: inline-block;
-     width: 25%; /* 4 пункта меню, то есть 100%/4 */
-     text-align: center;
- }
- #head_main a {
-     display: block;
-     padding: 3px 0;
-     color: #fff;
-     text-decoration: none;
- }
- #head_main a:hover {
-     background: rgb(96,145,172);
- }
+#head_main, #head_main li {
+    padding: 0;
+    width: 60%;
+    margin: auto;
+}
+
+#head_main li {
+    display: inline-block;
+    width: 25%; /* 4 пункта меню, то есть 100%/4 */
+    text-align: center;
+}
+
+#head_main a {
+    display: block;
+    padding: 3px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+#head_main a:hover {
+    background: rgb(96, 145, 172);
+}
 
 /*ul {*/
 /* */

@@ -22,7 +22,7 @@ echo "<script>document.getElementById('login_num').value='".$_GET['login_num']."
 echo "<script>document.getElementById('password_txt').value='".$_GET['password_txt']."';</script>";
 echo "<script>document.getElementById('password_num').value='".$_GET['password_num']."';</script>";
 echo "<script>document.getElementById('Email_txt').value='".$_GET['Email_txt']."';</script>";
-echo "<script>document.getElementById('Email_num').value='".$_GET['Email_num']."';</script>";
+echo "<script>document.getElementById('email_num').value='".$_GET['Email_num']."';</script>";
 echo "<script>document.getElementById('lang_text').value='".$_GET['lang_text']."';</script>";
 echo "<script>document.getElementById('date_text').value='".$_GET['date_text']."';</script>";
 echo "<script>document.getElementById('color_text').value='".$_GET['color_text']."';</script>";
@@ -38,13 +38,13 @@ if($_GET["all_gener"]=='Згенерувати') {
     echo "<script>gen_all();</script>";
 }
      // А это у меня определение что нужно вызвать из БД
-if($_GET["fio_btn"]=='ПІБ') {
+if($_GET["fio_btn"]=='Оновити ПІБ') {
     call_user_func('gen_fio', $gender);
 }
-if ($_GET["address_btn"]=="Адреса"){
+if ($_GET["address_btn"]=="Оновити адресу"){
     call_user_func('gen_address');
 }
-if ($_GET["profession_btn"]=="Професія"){
+if ($_GET["profession_btn"]=="Оновити професію"){
     call_user_func('gen_profession');
 }
 

@@ -37,11 +37,11 @@ function gen_nomer() {
 
 function gen_email() {
     let length
-    if(document.getElementById('Email_num').value==""){
+    if(document.getElementById('email_num').value==""){
         length = 10
     }
     else{
-        length=document.getElementById('Email_num').value;
+        length=document.getElementById('email_num').value;
     }
     let alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
     let domain_email = [ '@yandex.ua', '@rambler.ua', '@qip.ua', '@bigmir.net', '@ukr.net', '@hotmail.com', '@yahoo.com', '@gmail.com', '@mail.ua'];
