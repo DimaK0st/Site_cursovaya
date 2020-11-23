@@ -1,60 +1,84 @@
- .email_num input , .login_num input, .password_num input{
+body {
+    margin: 0px;
+    background-color: #000000;
+}
+
+*{
+    font-size: 17px;
+     margin: 0;
+     padding: 0;
+     outline: none;
+ }
+
+ * input[type=text]{
+     outline: none;
+     border: none;
+     border: solid 1px #6a6a6a;
+     background-color:  #e5eae2;
+ }
+* input[type=text]{
+    width: calc(100% - 200px);
+    display: inline-block;
+ }
+ .generator span{
+     margin-top: 10px;
+     margin-bottom: 3px;
+     font-size: 16px;
+     display: flex;
+     flex-wrap: wrap;
+
+ }
+
+
+.email_num input , .login_num input, .password_num input{
     width: 15px;
     height: 20px;
      margin-right: 3px;
     padding: 0;
      text-align: center;
 
+
 }
- .email, .login, .password {
+ .email .email_inputer, .login .login_inputer, .password .password_inputer {
+
      display: flex;
  }
 
 
  .generator{
+
+     -moz-box-sizing: border-box; /* Для Firefox */
+     padding-left: 3%;
      margin-left: auto;
      margin-right: auto;
-     width: 75%;
-    background-color: darkslategrey;
+     width: 57%;
+     background-color: #06799f;
  }
 
-
-
- #navbar ul{
-     display: none;
-     background-color: #f90;
-     position: absolute;
-     top: 100%;
- }
- #navbar li:hover ul { display: block; }
- #navbar, #navbar ul{
-     margin: 0;
+#head_main {
+    background: rgb(46,95,122);
+    border-radius: 10px 10px 0 0;
+}
+ #head_main, #head_main li {
      padding: 0;
-     list-style-type: none;
+     width: 60%;
+     margin: auto;
  }
- #navbar {
-     height: 30px;
-     background-color: #666;
-     padding-left: 25px;
-     min-width: 470px;
- }
- #navbar li {
-     float: left;
-     position: relative;
-     height: 100%;
- }
- #navbar li a {
-     display: block;
-     padding: 6px;
-     width: 100px;
-     color: #fff;
-     text-decoration: none;
+
+ #head_main li {
+     display: inline-block;
+     width: 25%; /* 4 пункта меню, то есть 100%/4 */
      text-align: center;
  }
- #navbar ul li { float: none; }
- #navbar li:hover { background-color: #f90; }
- #navbar ul li:hover { background-color: #666; }
-
+ #head_main a {
+     display: block;
+     padding: 3px 0;
+     color: #fff;
+     text-decoration: none;
+ }
+ #head_main a:hover {
+     background: rgb(96,145,172);
+ }
 
 /*ul {*/
 /* */
