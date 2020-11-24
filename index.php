@@ -2,13 +2,13 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/menu.css">
-    <link rel="shortcut icon" href="image/ico.ico" type="image/x-icon"
+
+    <script type="text/javascript" src="js/generate.js"></script>
+
     <title>Генератор личности</title>
-
-    <script type="text/javascript" src="js/generate.js">
-
-    </script>
+    <link rel="shortcut icon" href="image/ico.ico" type="image/x-icon"
 
 
 </head>
@@ -24,19 +24,16 @@
             <li><a href="#">Третий</a></li>
 
         </ul>
-    </nav>
+    </nav>Генератор личности
     <a href="#" class="univer"> <button> Университет </button> </a>
 </header>
 -->
 
 <header>
+<?
+    include "template/interface/header.php";
+?>
 
-    <ul id="head_main">
-        <li><a href="#1">Головна</a>
-        <li><a href="#2">Пункт 2</a>
-        <li><a href="#3">Пункт 3</a>
-        <li><a href="#4">Пункт 4</a>
-    </ul>
 </header>
 
 
@@ -188,7 +185,11 @@ include "php\gener.php";
 
 <footer>
 
+    <?php
 
+    include "template/interface/footer.php";
+
+    ?>
 </footer>
 
 
