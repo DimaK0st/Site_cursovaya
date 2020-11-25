@@ -1,0 +1,41 @@
+.selective_generation_block {
+    padding: 20px 3% 10px 3%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 54%;
+    background-color: #06799f;
+    font-size: 18px;
+}
+
+.check_block, .check_num_block{
+    margin-top: 5px;
+    display: flex;
+
+    flex-wrap: wrap;
+}
+
+#osobistist_num {
+    width: 60px;
+
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#generate_n_user {
+    font-size: 18px;
+
+    border-radius: 10px 10px 10px 10px;
+}
+
+#check_password_num, #check_email_num, #check_login_num {
+
+    width: 45px;
+    height: 20px;
+    margin-right: 3px;
+    padding: 0;
+    text-align: center;
+
+    text-indent: 0px;
+    text-align: center;
+    border-radius: 10px 10px 10px 10px;
+}

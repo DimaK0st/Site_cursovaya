@@ -4,7 +4,7 @@ body {
 }
 
 * {
-    font-size: 17px;
+    font-size: 18px;
     margin: 0;
     padding: 0;
     outline: none;
@@ -55,12 +55,9 @@ width: 220px;
     width: 54%;
     background-color: #06799f;
 
-    padding-bottom: 10px;
     border-radius: 0 0 10px 10px;
 
 }
-
-
 
 /*ul {*/
 /* */

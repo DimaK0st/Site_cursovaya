@@ -7,7 +7,7 @@
 
     <script type="text/javascript" src="js/generate.js"></script>
 
-    <title>Генератор личности</title>
+    <title>Генератор особистості</title>
     <link rel="shortcut icon" href="image/ico.ico" type="image/x-icon"
 
 
@@ -173,7 +173,14 @@
 <!--           onClick="validphone(phone.value)">-->
 <!--</FORM>-->
 
+<footer>
 
+    <?php
+
+    include "template/interface/footer.php";
+
+    ?>
+</footer>
 </body>
 
 <?php
@@ -183,14 +190,7 @@ include "php\gener.php";
 ?>
 
 
-<footer>
 
-    <?php
-
-    include "template/interface/footer.php";
-
-    ?>
-</footer>
 
 
 </html>

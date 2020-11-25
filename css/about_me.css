@@ -6,8 +6,6 @@
     margin-right: auto;
     width: 54%;
     background-color: #06799f;
-    border-radius: 0 0 10px 10px;
-
     font-size: 18px;
 }
 
@@ -27,6 +25,7 @@ body {
 
 .image_block {
     background-color: #06799f;
+    margin-right: 10px;
 }
 
 .about_me_table_block {

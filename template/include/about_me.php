@@ -11,11 +11,7 @@
 
 </head>
 
-<header>
-    <?
-    include "../../template/interface/header.php";
-    ?>
-</header>
+
 <script type="text/javascript">
     <!--
 
@@ -30,6 +26,14 @@
 </script>
 
 <body>
+
+<header>
+    <?
+    include "../../template/interface/header.php";
+    ?>
+</header>
+
+
 <div class="about_me_block">
     <div style="display: flex">
         <div class="image_block">
@@ -83,7 +87,15 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
 </div>
+    <footer>
+        <?php
+
+        include "../../template/interface/footer.php";
+
+        ?>
+    </footer>
 </div>
+
 
 
 </body>
