@@ -21,116 +21,133 @@
     ?>
 </header>
 
-<div class="selective_generation_block">
+<FORM action="selective_generation.php" method=get>
 
-    <?
-    include "../../php/selective_generation_script.php";
-    gen_nomer_php();
-
-    ?>
-
-    <div class="check_input_block">
-
-        <div class="check_block">
-
-            <div class="check_fio">
-                <span> ПІБ </span>
-                <input type="checkbox" name="ПІБ">
-            </div>
-
-            <div class="check_address">
-                <span> Адреса </span>
-                <input type="checkbox" name="Адреса">
-            </div>
-
-
-            <div class="check_profession">
-                <span> Професія </span>
-                <input type="checkbox" name="Професія">
-            </div>
-
-
-            <div class="check_nomer">
-                <span> Номер </span>
-                <input type="checkbox" name="Номер">
-            </div>
-
-
-            <div class="check_lang">
-                <span> Мова </span>
-                <input type="checkbox" name="Мова">
-            </div>
-
-
-            <div class="check_date">
-                <span> Дата </span>
-                <input type="checkbox" name="Дата">
-            </div>
-
-
-            <div class="check_color">
-                <span> Колір </span>
-                <input type="checkbox" name="Колір">
-            </div>
-
-
-            <div class="check_height">
-                <span> Зріст </span>
-                <input type="checkbox" name="Зріст">
-            </div>
-
-
-            <div class="check_weight">
-                <span> Вага </span>
-                <input type="checkbox" name="Вага">
-            </div>
-
+    <div class="selective_generation_block">
+        <div class="check_gender">
+            <a>Оберіть стать:</a>
+            <input type="radio" name="course" value="1"/><abbr title="Чоловіча"> Ч. </abbr>
+            <input type="radio" name="course" value="2"/><abbr title="Жіноча"> Ж. </abbr>
+            <input type="radio" name="course" checked value="3"/>Випадкова
         </div>
 
+        <div class="check_input_block">
 
-        <div class="check_num_block">
+            <div class="check_block">
 
-            <div class="check_email">
-                <span> Пошта </span>
-                <input type="text" name="check_email_num" id="check_email_num" placeholder="Розмір" maxlength="2">
-                <input type="checkbox" name="Пошта">
+
+                <br>
+                <div class="check_fio">
+                    <input type="checkbox" name="ПІБ">
+                    <span>ПІБ, </span>
+                </div>
+
+                <div class="check_address">
+                    <input type="checkbox" name="Адреса">
+                    <span>Адреса, </span>
+                </div>
+
+
+                <div class="check_profession">
+                    <input type="checkbox" name="Професія">
+                    <span>Професія, </span>
+                </div>
+
+
+                <div class="check_nomer">
+                    <input type="checkbox" name="Номер">
+                    <span>Номер, </span>
+                </div>
+
+
+                <div class="check_lang">
+                    <input type="checkbox" name="Мова">
+                    <span>Мова, </span>
+                </div>
+
+
+                <div class="check_date">
+                    <input type="checkbox" name="Дата">
+                    <span>Дата, </span>
+                </div>
+
+
+                <div class="check_color">
+                    <input type="checkbox" name="Колір">
+                    <span>Колір, </span>
+                </div>
+
+
+                <div class="check_height">
+                    <input type="checkbox" name="Зріст">
+                    <span>Зріст, </span>
+                </div>
+
+
+                <div class="check_weight">
+                    <input type="checkbox" name="Вага">
+                    <span>Вага, </span>
+                </div>
+
             </div>
 
-            <div class="check_login">
-                <span> Логін </span>
-                <input type="text" name="check_login_num" id="check_login_num" placeholder="Розмір" maxlength="2">
-                <input type="checkbox" name="Логін">
+
+            <div class="check_num_block">
+
+                <div class="check_email">
+                    <input type="checkbox" name="Пошта">
+                    <span>Пошта </span>
+                    <input type="text" name="check_email_num" id="check_email_num" placeholder="Розмір" maxlength="2">
+                    <span>, </span>
+                </div>
+
+                <div class="check_login" style="float:left;">
+                    <input type="checkbox" name="Логін">
+                    <span>Логін </span>
+                    <input type="text" name="check_login_num" id="check_login_num" placeholder="Розмір" maxlength="2">
+                    <span>, </span>
+                </div>
+
+                <div class="check_password" style="float:left;">
+                    <input type="checkbox" name="Пароль">
+                    <span>Пароль </span>
+                    <input type="text" name="check_password_num" id="check_password_num" placeholder="Розмір"
+                           maxlength="2">
+                    <span>. </span>
+                </div>
             </div>
 
-            <div class="check_password">
-                <span> Пароль </span>
-                <input type="text" name="check_password_num" id="check_password_num" placeholder="Розмір" maxlength="2">
-                <input type="checkbox" name="Пароль">
+            <br>
+            <span> Кількість особистостей </span>
+            <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" maxlength="2">
+            <input type="submit" id="generate_n_user_submit" name="generate_n_user_submit" value="Згенерувати">
+
+            <br><br>
+
+            <div class="result_from_php">
+                <?
+
+                include "../../php/selective_generation_script.php";
+
+
+                ?>
+
+
             </div>
         </div>
-
-        <br>
-        <span> Кількість особистостей </span>
-        <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" maxlength="2">
-        <input type="submit" id="generate_n_user" name="generate_n_user" value="Згенерувати">
-
-
-
-
 
 
     </div>
 
 
-</div>
+    <footer>
+        <?php
 
+        include "../../template/interface/footer.php";
 
-<footer>
-    <?php
-
-    include "../../template/interface/footer.php";
-
-    ?>
-</footer>
+        ?>
+    </footer>
 </body>
+
+
 </html>

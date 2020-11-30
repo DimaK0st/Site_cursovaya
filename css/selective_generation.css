@@ -1,3 +1,12 @@
+* input[type=checkbox]{
+
+    float: left;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+
+
 .selective_generation_block {
     padding: 20px 3% 10px 3%;
     margin-left: auto;
@@ -38,4 +47,26 @@
     text-indent: 0px;
     text-align: center;
     border-radius: 10px 10px 10px 10px;
+}
+
+.result_from_forma{
+
+}
+
+
+
+
+.result_from_php{
+    padding: 5px;
+    border-radius: 10px 10px 10px 10px;
+    margin: auto;
+    display: inline-flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    background-color: #20acd9;
+}
+.check_gender{
+    margin-left: 3px;
+    display: flex;
+    flex-wrap: wrap;
 }
