@@ -38,54 +38,54 @@
 
                 <br>
                 <div class="check_fio">
-                    <input type="checkbox" name="ПІБ">
+                    <input type="checkbox" id="ПІБ" checked name="ПІБ">
                     <span>ПІБ, </span>
                 </div>
 
                 <div class="check_address">
-                    <input type="checkbox" name="Адреса">
+                    <input type="checkbox" id="Адреса" checked name="Адреса">
                     <span>Адреса, </span>
                 </div>
 
 
                 <div class="check_profession">
-                    <input type="checkbox" name="Професія">
+                    <input type="checkbox" id="Професія" checked name="Професія">
                     <span>Професія, </span>
                 </div>
 
 
                 <div class="check_nomer">
-                    <input type="checkbox" name="Номер">
+                    <input type="checkbox" id="Номер" checked name="Номер">
                     <span>Номер, </span>
                 </div>
 
 
                 <div class="check_lang">
-                    <input type="checkbox" name="Мова">
+                    <input type="checkbox" id="Мова" checked name="Мова">
                     <span>Мова, </span>
                 </div>
 
 
                 <div class="check_date">
-                    <input type="checkbox" name="Дата">
+                    <input type="checkbox" id="Дата" checked name="Дата">
                     <span>Дата, </span>
                 </div>
 
 
                 <div class="check_color">
-                    <input type="checkbox" name="Колір">
+                    <input type="checkbox" id="Колір" checked name="Колір">
                     <span>Колір, </span>
                 </div>
 
 
                 <div class="check_height">
-                    <input type="checkbox" name="Зріст">
+                    <input type="checkbox" id="Зріст" checked name="Зріст">
                     <span>Зріст, </span>
                 </div>
 
 
                 <div class="check_weight">
-                    <input type="checkbox" name="Вага">
+                    <input type="checkbox" id="Вага" checked name="Вага">
                     <span>Вага, </span>
                 </div>
 
@@ -95,21 +95,21 @@
             <div class="check_num_block">
 
                 <div class="check_email">
-                    <input type="checkbox" name="Пошта">
+                    <input type="checkbox" id="Пошта" checked name="Пошта">
                     <span>Пошта </span>
                     <input type="text" name="check_email_num" id="check_email_num" placeholder="Розмір" maxlength="2">
                     <span>, </span>
                 </div>
 
                 <div class="check_login" style="float:left;">
-                    <input type="checkbox" name="Логін">
+                    <input type="checkbox" id="Логін" checked name="Логін">
                     <span>Логін </span>
                     <input type="text" name="check_login_num" id="check_login_num" placeholder="Розмір" maxlength="2">
                     <span>, </span>
                 </div>
 
                 <div class="check_password" style="float:left;">
-                    <input type="checkbox" name="Пароль">
+                    <input type="checkbox" id="Пароль" checked name="Пароль">
                     <span>Пароль </span>
                     <input type="text" name="check_password_num" id="check_password_num" placeholder="Розмір"
                            maxlength="2">
@@ -121,6 +121,7 @@
             <span> Кількість особистостей </span>
             <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" maxlength="2">
             <input type="submit" id="generate_n_user_submit" name="generate_n_user_submit" value="Згенерувати">
+            <input type="reset" name="Reset" value="Очистити">
 
             <br><br>
 
@@ -131,7 +132,6 @@
 
 
                 ?>
-
 
             </div>
         </div>

@@ -60,13 +60,5 @@
     padding: 5px;
     border-radius: 10px 10px 10px 10px;
     margin: auto;
-    display: inline-flex;
-    flex-wrap:wrap;
-    justify-content:space-between;
     background-color: #20acd9;
-}
-.check_gender{
-    margin-left: 3px;
-    display: flex;
-    flex-wrap: wrap;
 }
