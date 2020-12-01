@@ -5,14 +5,15 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/menu.css">
 
+
     <script type="text/javascript" src="js/generate.js"></script>
 
     <title>Генератор особистості</title>
-    <link rel="shortcut icon" href="/image/ico.ico" type="image/x-icon"
+    <link rel="shortcut icon" href="/image/ico.ico" type="image/x-icon">
 
 
 </head>
-
+ 
 <body>
 <!--
 <header>
@@ -155,6 +156,7 @@
 
             <input type="submit" name="all_gener" value="Згенерувати" onClick="document.location = '?id=1'"/>
             <input type="reset" name="Reset" value="Очистити">
+        </div>
         </div>
 </FORM>
 

@@ -5,13 +5,6 @@
 
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/about_me.css">
-
-    <title>Генератор личности</title>
-    <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon"
-
-</head>
-
-
 <script type="text/javascript">
     <!--
 
@@ -24,6 +17,13 @@
 
     -->
 </script>
+    <title>Генератор особистості</title>
+    <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
+
+</head>
+
+
+
 
 <body>
 
@@ -37,13 +37,13 @@
 <div class="about_me_block">
     <div style="display: flex">
         <div class="image_block">
-            <a href="http://csn.zntu.edu.ua"><abbr title="Перейти на сайт кафедри">
-                    <img src="..//../../image/csn_logo.png" width="200" height="100" vspace="10">
+            <a href="http://csn.zntu.edu.ua">
+                    <img src="..//../../image/csn_logo.png" alt="Перейти на сайт кафедри" width="200" height="100" vspace="10">
             </a>
         </div>
 
         <div class="about_me_table_block">
-            <TABLE border=1 align=center bordercolor=000000>
+            <TABLE border=1 align=center >
                 <TR>
                     <TH COLSPAN=2>
                         Про себе
@@ -87,6 +87,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
 </div>
+</div>
     <footer>
         <?php
 
@@ -94,7 +95,7 @@
 
         ?>
     </footer>
-</div>
+
 
 
 

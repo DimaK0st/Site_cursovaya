@@ -1,10 +1,8 @@
 <?php
 $alphabet = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'v', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0');
 
-
 //Подключение к Базе Данных
 //$str_bd = new mysqli("localhost", "a0492513_gen_user", "zZ774488559966", "a0492513_gen_user");
-
 $str_bd=mysqli_connect("127.0.0.1","root", "root", "gen_user");
 //Эта функция вызывает все остальные функции которые в свою очередь генерируют определённые значения
 
@@ -24,56 +22,8 @@ else {
 foreach ($sum_arr_text as &$temp_iter_arr_text) {
     if ($_GET[$temp_iter_arr_text] != '') {
         echo "<script>document.getElementById('$temp_iter_arr_text').value='".$_GET[$temp_iter_arr_text]."';</script>";
-
-
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function gen_all_php()
 {
@@ -130,9 +80,7 @@ function gen_email_php()
         $i += 1;
     }
     $res_email .= $domain_email[random_int(0, count($domain_email))];
-
     return $res_email;
-
 }
 
 
@@ -155,14 +103,12 @@ function gen_color_php()
 
 function gen_randomDate_php()
 {
-
 // использование функционала date php для создания случайной даты в заданном диапазоне
 // начало диапазона дат
     $sDateFrom = "1980-01-01";
 // конец диапозона дат
     $sDateTill = "2002-01-01";
     $sDate = date("d.m.Y", mt_rand(strtotime($sDateFrom), strtotime($sDateTill)));
-
     return $sDate;
 }
 
@@ -188,8 +134,8 @@ function gen_password_php()
 {
     global $alphabet;
     $length = 10;
-    if ($_GET['password_num'] != "") {
-        $length = $_GET['password_num'];
+    if ($_GET['check_password_num'] != "") {
+        $length = $_GET['check_password_num'];
     }
     $res_password = "";
     $i = 0;

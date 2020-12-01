@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../css/selective_generation.css">
 
     <title>Генератор особистості</title>
-    <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon"
+    <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
 
 
 </head>
@@ -139,7 +139,7 @@
 
     </div>
 
-
+</FORM>
     <footer>
         <?php
 
