@@ -3,25 +3,25 @@ $alphabet = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 
 //Подключение к Базе Данных
 //$str_bd = new mysqli("localhost", "a0492513_gen_user", "zZ774488559966", "a0492513_gen_user");
-$str_bd=mysqli_connect("127.0.0.1","root", "root", "gen_user");
+$str_bd = mysqli_connect("127.0.0.1", "root", "root", "gen_user");
 //Эта функция вызывает все остальные функции которые в свою очередь генерируют определённые значения
 
-$iter=0;
-$sum_arr_checkbox=array('ПІБ','Адреса','Професія','Номер','Мова','Дата','Колір','Зріст','Вага','Пошта','Логін','Пароль');
-$sum_arr_text=array('check_email_num','check_login_num','check_password_num','osobistist_num');
-foreach ($sum_arr_checkbox as &$temp_iter_arr_checkbox) {
+$iter = 0;
+$sum_arr_checkbox = array('ПІБ', 'Адреса', 'Професія', 'Номер', 'Мова', 'Дата', 'Колір', 'Зріст', 'Вага', 'Пошта', 'Логін', 'Пароль');
+$sum_arr_text = array('check_email_num', 'check_login_num', 'check_password_num', 'osobistist_num');
 
-    if ($_GET[$temp_iter_arr_checkbox]!='') {
-    echo "<script> document.getElementById('$temp_iter_arr_checkbox').checked=true;</script>";
-}
-else {
+foreach ($sum_arr_checkbox as &$temp_iter_arr_checkbox) {
     echo "<script> document.getElementById('$temp_iter_arr_checkbox').checked=false;</script>";
+    if ($_GET[$temp_iter_arr_checkbox] == 'on') {
+
+        echo "<script> document.getElementById('$temp_iter_arr_checkbox').checked=true;</script>";
+    }
 }
- }
+
 
 foreach ($sum_arr_text as &$temp_iter_arr_text) {
     if ($_GET[$temp_iter_arr_text] != '') {
-        echo "<script>document.getElementById('$temp_iter_arr_text').value='".$_GET[$temp_iter_arr_text]."';</script>";
+        echo "<script>document.getElementById('$temp_iter_arr_text').value='" . $_GET[$temp_iter_arr_text] . "';</script>";
     }
 }
 
@@ -75,11 +75,11 @@ function gen_email_php()
     $i = 0;
     while ($i < $len) {
 
-        $res_email .= $alphabet[random_int(0, count($alphabet))];
+        $res_email .= $alphabet[random_int(0, count($alphabet) - 1)];
 
         $i += 1;
     }
-    $res_email .= $domain_email[random_int(0, count($domain_email))];
+    $res_email .= $domain_email[random_int(0, count($domain_email) - 1)];
     return $res_email;
 }
 
@@ -115,11 +115,9 @@ function gen_randomDate_php()
 function gen_login_php()
 {
     global $alphabet;
-    $length = 0;
-    if ($_GET['check_email_num'] == "") {
-        $length = 10;
-    } else {
-        $length = $_GET['check_email_num'];
+    $length = 10;
+    if ($_GET['check_password_num'] != "") {
+        $length = $_GET['check_password_num'];
     }
     $res_login = "";
     $i = 0;
@@ -184,9 +182,9 @@ UNION SELECT COUNT(`kod_surname`) as counter FROM `surname_woman`";
         //Такое решение было принято для того что бы запросы выполнялись быстрее, если без UNION, то запрос выполнялся бы 2 секунды, а сейчас 0,002секунды
     }
     //Переменные для генерации рандомного фио
-    $rand_name = random_int(0, $arr_res_fio[0] - 1);
-    $rand_otchestvo = random_int(0, $arr_res_fio[1] - 1);
-    $rand_surname = random_int(0, $arr_res_fio[2] - 1);
+    $rand_name = random_int(1, $arr_res_fio[0] - 1);
+    $rand_otchestvo = random_int(1, $arr_res_fio[1] - 1);
+    $rand_surname = random_int(1, $arr_res_fio[2] - 1);
 
 
     if ($gender == "1") {
@@ -203,7 +201,7 @@ WHERE kod_name=" . $rand_name . " and kod_otchestvo=" . $rand_otchestvo . " and 
     //Получаем значения благодаря рандомным переменным
     for ($i = 0; $i < mysqli_num_rows($r); $i++) {
         $f = mysqli_fetch_array($r);
-        $res_fio= $f['surname']." ".$f['name']." ". $f['otchestvo'];
+        $res_fio = $f['surname'] . " " . $f['name'] . " " . $f['otchestvo'];
     }
     return $res_fio;
 
@@ -224,13 +222,13 @@ function gen_address()
 
     }
     //Переменная для генерации рандомного адреса
-    $rand_addres = random_int(0, $rand_count_addres - 1);
+    $rand_addres = random_int(1, $rand_count_addres - 1);
     $strSQL = "SELECT `region` as obl, `title` as gor, `zip` as ind , `street` as yli FROM `sity` WHERE `num`=" . $rand_addres;
     $r = mysqli_query($str_bd, $strSQL);
     //Получаем значение благодаря рандомной переменной
     for ($i = 0; $i < mysqli_num_rows($r); $i++) {
         $f = mysqli_fetch_array($r);
-        return "$f[ind]:$f[obl] обл.,$f[gor],$f[yli],".random_int(1,324)."/".random_int(1,245);
+        return "$f[ind]:$f[obl] обл.,$f[gor],$f[yli]," . random_int(1, 324) . "/" . random_int(1, 245);
     }
 
 
@@ -238,22 +236,23 @@ function gen_address()
 
 
 //Здесь генерируется профессия с базы данных
-function gen_profession(){
+function gen_profession()
+{
 
     global $str_bd;
-    $strSQL="SELECT max(`kod_professii`) as counter_profession FROM `profession`";
+    $strSQL = "SELECT max(`kod_professii`) as counter_profession FROM `profession`";
 
-    $r = mysqli_query($str_bd,$strSQL);
+    $r = mysqli_query($str_bd, $strSQL);
     //получение количества записей в базе данных
     for ($i = 0; $i < mysqli_num_rows($r); $i++) {
         $f = mysqli_fetch_array($r);
-        $rand_count_profession=$f['counter_profession'];
+        $rand_count_profession = $f['counter_profession'];
 
     }
     //Переменная для генерации рандомной профессии
-    $rand_profession = random_int( 0, $rand_count_profession-1 );
-    $strSQL="SELECT `professia` as profession FROM `profession` WHERE `kod_professii`=".$rand_profession;
-    $r = mysqli_query($str_bd,$strSQL);
+    $rand_profession = random_int(1, $rand_count_profession - 1);
+    $strSQL = "SELECT `professia` as profession FROM `profession` WHERE `kod_professii`=" . $rand_profession;
+    $r = mysqli_query($str_bd, $strSQL);
     //Получаем значение благодаря рандомной переменной
     for ($i = 0; $i < mysqli_num_rows($r); $i++) {
         $f = mysqli_fetch_array($r);
@@ -263,12 +262,13 @@ function gen_profession(){
 
 }
 
-
-if ($_GET['generate_n_user_submit'] != "") {
+function generation()
+{
+    global $str_bd;
     $iteration = 0;
-    $osobistist_num = 10;
+    $osobistist_num = 1;
     $gender = $_GET['course'];   //get запрос с значениями пола, если рандом, то присваиваем 1 или 2 (1- мужской, 2- женский)
-
+    $gender_temp = 0;
     if ($_GET['osobistist_num'] != '') {
         $osobistist_num = $_GET['osobistist_num'];
     }
@@ -279,12 +279,17 @@ if ($_GET['generate_n_user_submit'] != "") {
         $result_text .= "<div class='result_from_forma' style='word-wrap: break-word'>";
 
         if ($_GET['ПІБ'] == 'on') {
+
+            $result_text .= " <div><b>ПІБ:</b> ";
             if ($gender == "3") {
+                global $gender_temp;
                 $gender_temp = random_int(1, 2);
-                $result_text.=" <div><b>ПІБ:</b> ";
-                $result_text.=gen_fio($gender_temp);
-                $result_text.="</div> ";
+                $result_text .= gen_fio($gender_temp);
+            } else {
+                $result_text .= gen_fio($gender);
             }
+            $result_text .= "</div> ";
+
         }
 
         if ($_GET['Адреса'] == 'on') {
@@ -310,7 +315,7 @@ if ($_GET['generate_n_user_submit'] != "") {
         }
 
         if ($_GET['Мова'] == 'on') {
-            $result_text .= " <div><b>Мова:</b>";
+            $result_text .= " <div><b>Іноземна мова:</b>";
             $result_text .= gen_lang_php();
             $result_text .= "</div> ";
 
@@ -370,7 +375,10 @@ if ($_GET['generate_n_user_submit'] != "") {
 
 //Закрываем поток обмена с базой данных
     mysqli_close($str_bd);
+
 }
+
+generation();
 
 
 ?>

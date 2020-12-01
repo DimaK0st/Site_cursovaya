@@ -1,12 +1,13 @@
-* input[type=checkbox]{
+* input[type=checkbox] {
 
     float: left;
     margin-right: 0;
     padding-right: 0;
 }
+
 body {
     margin: 0px;
-        background-color: #494343;
+    background-color: #494343;
 
 }
 
@@ -20,7 +21,7 @@ body {
     font-size: 18px;
 }
 
-.check_block, .check_num_block{
+.check_block, .check_num_block {
     margin-top: 5px;
     display: flex;
 
@@ -53,14 +54,12 @@ body {
     border-radius: 10px 10px 10px 10px;
 }
 
-.result_from_forma{
+.result_from_forma {
 
 }
 
 
-
-
-.result_from_php{
+.result_from_php {
     padding: 5px;
     border-radius: 10px 10px 10px 10px;
     margin: auto;

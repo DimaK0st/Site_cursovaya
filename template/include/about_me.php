@@ -5,24 +5,22 @@
 
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="../../css/about_me.css">
-<script type="text/javascript">
-    <!--
+    <script type="text/javascript">
+        <!--
 
-    function on_off(name) {
+        function on_off(name) {
 
-        document.getElementById(name).style.display = "block"
+            document.getElementById(name).style.display = "block"
 
-    }
+        }
 
 
-    -->
-</script>
+        -->
+    </script>
     <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
 
 </head>
-
-
 
 
 <body>
@@ -38,12 +36,13 @@
     <div style="display: flex">
         <div class="image_block">
             <a href="http://csn.zntu.edu.ua">
-                    <img src="..//../../image/csn_logo.png" alt="Перейти на сайт кафедри" width="200" height="100" vspace="10">
+                <img src="..//../../image/csn_logo.png" alt="Перейти на сайт кафедри" width="200" height="100"
+                     vspace="10">
             </a>
         </div>
 
         <div class="about_me_table_block">
-            <TABLE border=1 align=center >
+            <TABLE border=1 align=center>
                 <TR>
                     <TH COLSPAN=2>
                         Про себе
@@ -82,21 +81,19 @@
         <a href="https://t.me/Dima_Koste" id="teleg" target="_blank">https://t.me/Dima_Koste</a>
     </div>
 
-<div class="youtube_block">
-    <iframe class="youtube" src="https://www.youtube.com/embed/l8CE6d_8ozw" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+    <div class="youtube_block">
+        <iframe class="youtube" src="https://www.youtube.com/embed/l8CE6d_8ozw" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+    </div>
 </div>
-</div>
-    <footer>
-        <?php
+<footer>
+    <?php
 
-        include "../../template/interface/footer.php";
+    include "../../template/interface/footer.php";
 
-        ?>
-    </footer>
-
-
+    ?>
+</footer>
 
 
 </body>

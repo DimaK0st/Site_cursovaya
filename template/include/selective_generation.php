@@ -121,7 +121,7 @@
             <span> Кількість особистостей </span>
             <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" maxlength="2">
             <input type="submit" id="generate_n_user_submit" name="generate_n_user_submit" value="Згенерувати">
-            <input type="reset" name="Reset" value="Очистити">
+            <input type="reset" name="Reset" value="Обрати всі">
 
             <br><br>
 
@@ -140,13 +140,13 @@
     </div>
 
 </FORM>
-    <footer>
-        <?php
+<footer>
+    <?php
 
-        include "../../template/interface/footer.php";
+    include "../../template/interface/footer.php";
 
-        ?>
-    </footer>
+    ?>
+</footer>
 </body>
 
 

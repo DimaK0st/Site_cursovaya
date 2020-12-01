@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-        background-color: #494343;
+    background-color: #494343;
 
 }
 
@@ -25,12 +25,12 @@ body {
 * input[type=button], * input[type=submit], * input[type=reset] {
     background-color: rgb(72, 203, 142);
     margin-top: 10px;
-width: 220px;
+    width: 225px;
 
     border-radius: 10px 10px 10px 10px;
 }
 
-.login_num [type=text], .password_num [type=text], .email_num [type=text]{
+.login_num [type=text], .password_num [type=text], .email_num [type=text] {
     width: 65px;
     height: 20px;
     margin-right: 3px;
@@ -42,11 +42,6 @@ width: 220px;
     border-radius: 10px 10px 10px 10px;
 }
 
-
-/*.login .login_num, .email .email_num, .password .password_num{*/
-/*    display: flex;*/
-/*}*/
-
 .generator {
 
     padding-left: 3%;
@@ -56,8 +51,31 @@ width: 220px;
     width: 54%;
     background-color: #06799f;
 
-    border-radius: 0 0 10px 10px;
 
+}
+
+.btn_copy {
+
+    outline: none;
+    float: right;
+}
+
+.btn_copy input[type=button] {
+    width: 45px;
+    background-color: rgb(72, 203, 142);
+
+}
+
+#nav_reset, #nav_submit {
+    width: 120px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav_btn {
+    margin: 0;
+    display: flex;
 }
 
 /*ul {*/

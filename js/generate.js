@@ -14,6 +14,11 @@ function gen_all() {
     gen_weight()
 }
 
+function myFunction(name_text) {
+    var copyText = document.getElementById(name_text);
+    copyText.select();
+    document.execCommand("copy");
+}
 function gen_nomer() {
     window.res_nomer = "";
     window.res_nomer += "+38"
