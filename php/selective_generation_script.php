@@ -3,7 +3,9 @@ $alphabet = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M
 
 
 //Подключение к Базе Данных
-$str_bd = new mysqli("127.0.0.1", "root", "root", "gen_user");
+//$str_bd = new mysqli("localhost", "a0492513_gen_user", "zZ774488559966", "a0492513_gen_user");
+
+$str_bd=mysqli_connect("127.0.0.1","root", "root", "gen_user");
 //Эта функция вызывает все остальные функции которые в свою очередь генерируют определённые значения
 
 $iter=0;
@@ -282,7 +284,7 @@ function gen_address()
     //Получаем значение благодаря рандомной переменной
     for ($i = 0; $i < mysqli_num_rows($r); $i++) {
         $f = mysqli_fetch_array($r);
-        return "$f[ind]:$f[obl] обл.,$f[gor],$f[yli],";
+        return "$f[ind]:$f[obl] обл.,$f[gor],$f[yli],".random_int(1,324)."/".random_int(1,245);
     }
 
 
@@ -375,7 +377,7 @@ if ($_GET['generate_n_user_submit'] != "") {
         }
 
         if ($_GET['Колір'] == 'on') {
-            $result_text .= " <div><b>Колір:</b> ";
+            $result_text .= " <div><b>Улюблений колір:</b> ";
             $result_text .= gen_color_php();
             $result_text .= "</div> ";
         }

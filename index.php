@@ -2,13 +2,13 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/menu.css">
 
     <script type="text/javascript" src="js/generate.js"></script>
 
     <title>Генератор особистості</title>
-    <link rel="shortcut icon" href="image/ico.ico" type="image/x-icon"
+    <link rel="shortcut icon" href="/image/ico.ico" type="image/x-icon"
 
 
 </head>
@@ -30,10 +30,11 @@
 -->
 
 <header>
-<?
-    include "template/interface/header.php";
-?>
+    <?php
 
+    include "template/interface/header.php";
+
+    ?>
 </header>
 
 
@@ -150,11 +151,10 @@
 
 
         <div class="all">
-            <input type="button" name="all_btn" id="all_btn" value="Згенерувати все" onclick="gen_all()">
 
 
             <input type="submit" name="all_gener" value="Згенерувати" onClick="document.location = '?id=1'"/>
-            <input type="reset" name="Reset" value="Очистить">
+            <input type="reset" name="Reset" value="Очистити">
         </div>
 </FORM>
 
@@ -180,16 +180,14 @@
     include "template/interface/footer.php";
 
     ?>
+    
 </footer>
 </body>
 
-<?php
 
-include "php\gener.php";
-
-?>
-
-
+    <?
+        include "php/gener.php";
+    ?>
 
 
 

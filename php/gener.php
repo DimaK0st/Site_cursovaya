@@ -3,50 +3,12 @@
 
 //Конец создания комментариев 14.11.2020 23:15
 
+echo "asdfdfasasdfasdf";
 
 //Подключение к Базе Данных
+//$str_bd = new mysqli("localhost", "a0492513_gen_user", "zZ774488559966", "a0492513_gen_user");
+
 $str_bd=mysqli_connect("127.0.0.1","root", "root", "gen_user");
-
-$gender = $_GET['course'];   //get запрос с значениями пола, если рандом, то присваиваем 1 или 2 (1- мужской, 2- женский)
-if ($gender=="3"){
-    $gender=random_int( 1,2);
-}
-
-//Эта вся конструкция, что бы значения в форме не удалялись
-echo "<script>document.getElementById('fio_text').value='".$_GET['fio_text']."';</script>";
-echo "<script>document.getElementById('address_text').value='".$_GET['address_text']."';</script>";
-echo "<script>document.getElementById('profession_text').value='".$_GET['profession_text']."';</script>";
-echo "<script>document.getElementById('Nomer').value='".$_GET['Nomer']."';</script>";
-echo "<script>document.getElementById('login_txt').value='".$_GET['login_txt']."';</script>";
-echo "<script>document.getElementById('login_num').value='".$_GET['login_num']."';</script>";
-echo "<script>document.getElementById('password_txt').value='".$_GET['password_txt']."';</script>";
-echo "<script>document.getElementById('password_num').value='".$_GET['password_num']."';</script>";
-echo "<script>document.getElementById('Email_txt').value='".$_GET['Email_txt']."';</script>";
-echo "<script>document.getElementById('email_num').value='".$_GET['Email_num']."';</script>";
-echo "<script>document.getElementById('lang_text').value='".$_GET['lang_text']."';</script>";
-echo "<script>document.getElementById('date_text').value='".$_GET['date_text']."';</script>";
-echo "<script>document.getElementById('color_text').value='".$_GET['color_text']."';</script>";
-echo "<script>document.getElementById('height_text').value='".$_GET['height_text']."';</script>";
-echo "<script>document.getElementById('weight_text').value='".$_GET['weight_text']."';</script>";
-
-
-//Здесь генерируются полностью все значения в поля
-if($_GET["all_gener"]=='Згенерувати') {
-    call_user_func('gen_fio', $gender);
-    call_user_func('gen_address');
-    call_user_func('gen_profession');
-    echo "<script>gen_all();</script>";
-}
-     // А это у меня определение что нужно вызвать из БД
-if($_GET["fio_btn"]=='Оновити ПІБ') {
-    call_user_func('gen_fio', $gender);
-}
-if ($_GET["address_btn"]=="Оновити адресу"){
-    call_user_func('gen_address');
-}
-if ($_GET["profession_btn"]=="Оновити професію"){
-    call_user_func('gen_profession');
-}
 
 
 //Здесь генерируется ФИО с базы данных
@@ -69,7 +31,7 @@ UNION SELECT COUNT(`kod_surname`) as counter FROM `surname_woman`";
 
     for ($i = 0; $i < mysqli_num_rows($r); $i++) {
         $f = mysqli_fetch_array($r);
-        $arr_res_fio[$i]=$f['counter']; // В массив заносим значения с количеством записей в базах (name, otchestvo, surname)
+        $arr_res_fio[$i]=$f[counter]; // В массив заносим значения с количеством записей в базах (name, otchestvo, surname)
         //Такое решение было принято для того что бы запросы выполнялись быстрее, если без UNION, то запрос выполнялся бы 2 секунды, а сейчас 0,002секунды
     }
     //Переменные для генерации рандомного фио
@@ -93,7 +55,7 @@ WHERE kod_name=".$rand_name." and kod_otchestvo=".$rand_otchestvo." and kod_surn
     //Получаем значения благодаря рандомным переменным
     for ($i = 0; $i < mysqli_num_rows($r); $i++) {
         $f = mysqli_fetch_array($r);
-        echo "<script> document.getElementById('fio_text').value='$f[surname] $f[name] $f[otchestvo]' </script>";
+        echo "<script> document.getElementById('fio_text').value='".$f[surname]." ". $f[name]. " " .$f[otchestvo]. "' </script>";
     }
 }
 
@@ -149,10 +111,47 @@ function gen_profession(){
 
 }
 
+$gender = $_GET[course];   //get запрос с значениями пола, если рандом, то присваиваем 1 или 2 (1- мужской, 2- женский)
+if ($gender=="3"){
+    $gender=random_int( 1,2);
+}
+
+//Эта вся конструкция, что бы значения в форме не удалялись
+echo "<script>document.getElementById('fio_text').value='".$_GET[fio_text]."';</script>";
+echo "<script>document.getElementById('address_text').value='".$_GET[address_text]."';</script>";
+echo "<script>document.getElementById('profession_text').value='".$_GET[profession_text]."';</script>";
+echo "<script>document.getElementById('Nomer').value='".$_GET[Nomer]."';</script>";
+echo "<script>document.getElementById('login_txt').value='".$_GET[login_txt]."';</script>";
+echo "<script>document.getElementById('login_num').value='".$_GET[login_num]."';</script>";
+echo "<script>document.getElementById('password_txt').value='".$_GET[password_txt]."';</script>";
+echo "<script>document.getElementById('password_num').value='".$_GET[password_num]."';</script>";
+echo "<script>document.getElementById('Email_txt').value='".$_GET[Email_txt]."';</script>";
+echo "<script>document.getElementById('email_num').value='".$_GET[Email_num]."';</script>";
+echo "<script>document.getElementById('lang_text').value='".$_GET[lang_text]."';</script>";
+echo "<script>document.getElementById('date_text').value='".$_GET[date_text]."';</script>";
+echo "<script>document.getElementById('color_text').value='".$_GET[color_text]."';</script>";
+echo "<script>document.getElementById('height_text').value='".$_GET[height_text]."';</script>";
+echo "<script>document.getElementById('weight_text').value='".$_GET[weight_text]."';</script>";
+//Здесь генерируются полностью все значения в поля
+if($_GET["all_gener"]=='Згенерувати') {
+    gen_fio($gender);
+    gen_address();
+    gen_profession();
+    echo "<script>gen_all();</script>";
+}
+     // А это у меня определение что нужно вызвать из БД
+if($_GET["fio_btn"]=='Оновити ПІБ') {
+    call_user_func('gen_fio', $gender);
+}
+if ($_GET["address_btn"]=="Оновити адресу"){
+    call_user_func('gen_address');
+}
+if ($_GET["profession_btn"]=="Оновити професію"){
+    call_user_func('gen_profession');
+}
 
 //Закрываем поток обмена с базой данных
 mysqli_close($str_bd);
-
 
 
 
