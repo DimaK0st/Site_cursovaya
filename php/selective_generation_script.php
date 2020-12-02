@@ -116,8 +116,8 @@ function gen_login_php()
 {
     global $alphabet;
     $length = 10;
-    if ($_GET['check_password_num'] != "") {
-        $length = $_GET['check_password_num'];
+    if ($_GET['check_login_num'] != "") {
+        $length = $_GET['check_login_num'];
     }
     $res_login = "";
     $i = 0;

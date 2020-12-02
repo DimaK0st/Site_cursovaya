@@ -44,6 +44,7 @@ function gen_email() {
     let length
     if(document.getElementById('email_num').value==""){
         length = 10
+
     }
     else{
         length=document.getElementById('email_num').value;

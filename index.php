@@ -2,8 +2,9 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/index.css">
 
 
     <script type="text/javascript" src="js/generate.js"></script>
@@ -15,20 +16,6 @@
 </head>
 
 <body>
-<!--
-<header>
-    <img class="logo" src="image/csn_logo.png" alt="logo" >
-    <nav class="nav_menu">
-        <ul >
-            <li><a href="#">Первый</a></li>
-            <li><a href="#">Второй</a></li>
-            <li><a href="#">Третий</a></li>
-
-        </ul>
-    </nav>Генератор личности
-    <a href="#" class="univer"> <button> Университет </button> </a>
-</header>
--->
 
 <header>
     <?php
@@ -42,9 +29,6 @@
 <FORM action="index.php" method=get>
     <div class="generator">
         <br>
-        <!--        <FORM action="php/gener.php"  method="post">-->
-
-        <!--        </FORM>-->
 
         <input name="all" type="hidden" value="find">
 
@@ -125,14 +109,14 @@
 
 
         <div class="lang">
-            <input type="button" name="lang_btn" id="lang_btn" value="Оновити іноземна мову" onclick="gen_lang()">
+            <input type="button" name="lang_btn" id="lang_btn" value="Оновити ін. мову" onclick="gen_lang()">
             <div class="btn_copy"><input type="button" value="copy" onclick="myFunction('lang_text')"></div>
             <input type="text" name="lang_text" id="lang_text"/>
         </div>
 
 
         <div class="date">
-            <input type="button" name="date_btn" id="date_btn" value="Оновити дату народження"
+            <input type="button" name="date_btn" id="date_btn" value="Оновити Д.Н."
                    onclick="gen_randomDate()">
             <div class="btn_copy"><input type="button" value="copy" onclick="myFunction('date_text')"></div>
             <input type="text" name="date_text" id="date_text"/>
@@ -140,7 +124,7 @@
 
 
         <div class="color">
-            <input type="button" name="color_btn" id="color_btn" value="Оновити улюблений колір" onclick="gen_color()">
+            <input type="button" name="color_btn" id="color_btn" value="Оновити колір" onclick="gen_color()">
             <div class="btn_copy"><input type="button" value="copy" onclick="myFunction('color_text')"></div>
             <input type="text" name="color_text" id="color_text"/>
         </div>
@@ -171,21 +155,6 @@
         </div>
     </div>
 </FORM>
-
-
-<!--<FORM action="php/gener.php" method="post">-->
-<!--    <h2>ФІП</h2>-->
-<!--    Імя:-->
-<!--    <INPUT TYPE="text" NAME="fn" onBlur="validfn(fn.value)">-->
-
-<!--    <SCRIPT LANGUAGE="JavaScript">-->
-<!--        document.dataentry.fn.focus()-->
-<!--    </SCRIPT>-->
-<!--    <BR>Введите номер телефона (ххх-хх-хх или ххххххх):<br>-->
-<!--    <INPUT TYPE="text" NAME="phone" SIZE=10>-->
-<!--    <INPUT TYPE="button" VALUE="Отправить"-->
-<!--           onClick="validphone(phone.value)">-->
-<!--</FORM>-->
 
 <footer>
 

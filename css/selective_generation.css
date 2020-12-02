@@ -65,3 +65,119 @@ body {
     margin: auto;
     background-color: #20acd9;
 }
+
+
+@media only screen and (max-device-width: 970px) {
+    input[type=checkbox] {
+margin-top: 10px;
+        float: left;
+        margin-right: 0;
+        padding-right: 0;
+        height:35px; width:35px;
+
+    }
+    input[type="radio" i] {
+        height:35px; width:35px;
+    }
+    * {
+        font-size: 50px;
+    }
+
+    body {
+        margin: 0px;
+        background-color: #494343;
+
+    }
+
+
+    .selective_generation_block {
+        padding: 20px 3% 10px 3%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 94%;
+        background-color: #06799f;
+    }
+
+    .check_block, .check_num_block {
+        margin-top: 5px;
+        display: flex;
+
+        flex-wrap: wrap;
+    }
+
+    #osobistist_num {
+        width: 220px;
+
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    #generate_n_user {
+        font-size: 18px;
+
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    #check_password_num, #check_email_num, #check_login_num {
+
+        width: 160px;
+        height: auto;
+        margin-right: 3px;
+        padding: 0;
+        text-align: center;
+
+        text-indent: 0px;
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+
+    .result_from_php {
+        padding: 5px;
+        border-radius: 10px 10px 10px 10px;
+        margin: auto;
+        background-color: #20acd9;
+    }
+
+
+    /*------------------------Меню------------------------*/
+    #head_main {
+        background: rgb(46, 95, 122);
+        border-radius: 10px 10px 0 0;
+
+    }
+
+    #head_main, #head_main li {
+        padding: 0;
+        width: 100%;
+        margin: auto;
+
+    }
+
+    #head_main li {
+
+        height: 100%;
+        width: 25%; /* 4 пункта меню, то есть 100%/4 */
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    #head_main a {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+        padding: 3px 0;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #head_main a:hover {
+        border-radius: 10px 10px 0 0;
+        background: rgb(96, 145, 172);
+    }
+
+    /*---------------------------------------------*/
+}

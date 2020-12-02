@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="../../css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="../../css/about_me.css">
     <script type="text/javascript">
         <!--
@@ -33,7 +34,7 @@
 
 
 <div class="about_me_block">
-    <div style="display: flex">
+    <div class="about" >
         <div class="image_block">
             <a href="http://csn.zntu.edu.ua">
                 <img src="..//../../image/csn_logo.png" alt="Перейти на сайт кафедри" width="200" height="100"
@@ -73,11 +74,11 @@
 
 
     <div class="github_block">
-        <input type="button" onclick="on_off('git')" value="Відобразити посилання на GitHub">
+        <input type="button" onclick="on_off('git')" value="GitHub">
         <a href="https://github.com/DimaK0st" id="git" target="_blank">https://github.com/DimaK0st</a>
     </div>
     <div class="telegram_block">
-        <input type="button" onclick="on_off('teleg')" value="Відобразити посилання на Telegram">
+        <input type="button" onclick="on_off('teleg')" value="Telegram">
         <a href="https://t.me/Dima_Koste" id="teleg" target="_blank">https://t.me/Dima_Koste</a>
     </div>
 

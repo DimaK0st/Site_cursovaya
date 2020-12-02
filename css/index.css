@@ -11,6 +11,10 @@ body {
     outline: none;
 }
 
+#head_main {
+    font-size: 28px;
+}
+
 * input[type=text] {
     margin-top: 2px;
     outline: none;
@@ -77,6 +81,144 @@ body {
     margin: 0;
     display: flex;
 }
+
+
+@media only screen and (max-device-width: 970px){
+    input[type="radio" i] {
+        height:35px; width:35px;
+    }
+    body {
+        margin: 0px;
+        background-color: #494343;
+
+    }
+
+    * {
+        font-size: 50px;
+        margin: 0;
+        padding: 0;
+        outline: none;
+    }
+
+    * input[type=text] {
+        margin-top: 2px;
+        outline: none;
+        width: calc(100%);
+        border: solid 1px #6a6a6a;
+        background-color: rgb(57, 174, 207);
+        text-indent: 5px;
+        border-radius: 5px 5px 5px 5px;
+    }
+
+    * input[type=button], * input[type=submit], * input[type=reset] {
+        background-color: rgb(72, 203, 142);
+        margin-top: 10px;
+        width: 470px;
+
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .login_num [type=text], .password_num [type=text], .email_num [type=text] {
+        width: 160px;
+        height: auto;
+        margin-right: 3px;
+        padding: 0;
+        text-align: center;
+
+        text-indent: 0px;
+        text-align: center;
+        border-radius: 10px 10px 10px 10px;
+    }
+
+    .generator {
+
+        padding-left: 3%;
+        padding-right: 3%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 94%;
+        background-color: #06799f;
+
+
+    }
+
+    .btn_copy {
+
+        outline: none;
+        float: right;
+    }
+
+    .btn_copy input[type=button] {
+        width: 145px;
+        background-color: rgb(72, 203, 142);
+
+    }
+
+    #nav_reset, #nav_submit {
+        width: 420px;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+
+    .nav_btn {
+        margin: 0;
+        display: flex;
+    }
+
+
+
+    /*------------------------Меню------------------------*/
+
+    #head_main {
+        background: rgb(46, 95, 122);
+        border-radius: 10px 10px 0 0;
+
+        display: flex;
+    }
+
+    #head_main, #head_main li {
+        padding: 0;
+        width: 100%;
+        margin: auto;
+
+    }
+
+    #head_main li {
+
+        height: 100%;
+        width: 25%; /* 4 пункта меню, то есть 100%/4 */
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    #head_main a {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+        padding: 3px 0;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    #head_main a:hover {
+        border-radius: 10px 10px 0 0;
+        background: rgb(96, 145, 172);
+    }
+
+    /*---------------------------------------------*/
+
+
+
+
+
+
+}
+
 
 /*ul {*/
 /* */

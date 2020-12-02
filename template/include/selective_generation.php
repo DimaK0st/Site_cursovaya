@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 
     <link rel="stylesheet" href="../../css/menu.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="../../css/selective_generation.css">
 
     <title>Генератор особистості</title>
