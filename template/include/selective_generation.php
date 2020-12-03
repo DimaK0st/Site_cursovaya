@@ -24,7 +24,7 @@
 
 <FORM action="selective_generation.php" method=get>
 
-    <div class="selective_generation_block">
+    <div class="sql_generation_block">
         <div class="check_gender">
             <a>Оберіть стать:</a>
             <input type="radio" name="course" value="1"/><abbr title="Чоловіча"> Ч. </abbr>

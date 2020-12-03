@@ -7,23 +7,7 @@ $str_bd = mysqli_connect("127.0.0.1", "root", "root", "gen_user");
 //Эта функция вызывает все остальные функции которые в свою очередь генерируют определённые значения
 
 $iter = 0;
-$sum_arr_checkbox = array('ПІБ', 'Адреса', 'Професія', 'Номер', 'Мова', 'Дата', 'Колір', 'Зріст', 'Вага', 'Пошта', 'Логін', 'Пароль');
-$sum_arr_text = array('check_email_num', 'check_login_num', 'check_password_num', 'osobistist_num');
 
-foreach ($sum_arr_checkbox as &$temp_iter_arr_checkbox) {
-    echo "<script> document.getElementById('$temp_iter_arr_checkbox').checked=false;</script>";
-    if ($_GET[$temp_iter_arr_checkbox] == 'on') {
-
-        echo "<script> document.getElementById('$temp_iter_arr_checkbox').checked=true;</script>";
-    }
-}
-
-
-foreach ($sum_arr_text as &$temp_iter_arr_text) {
-    if ($_GET[$temp_iter_arr_text] != '') {
-        echo "<script>document.getElementById('$temp_iter_arr_text').value='" . $_GET[$temp_iter_arr_text] . "';</script>";
-    }
-}
 
 function gen_all_php()
 {
@@ -262,7 +246,7 @@ function gen_profession()
 
 }
 
-function generation()
+function generation_sql()
 {
     global $str_bd;
     $iteration = 0;
@@ -278,7 +262,7 @@ function generation()
     while ($iteration < $osobistist_num) {
         $result_text .= "<div class='result_from_forma' style='word-wrap: break-word'>";
 
-        if ($_GET['ПІБ'] == 'on') {
+        if ($_GET['sql_fio_text'] != '') {
 
             $result_text .= " <div><b>ПІБ:</b> ";
             if ($gender == "3") {
@@ -292,7 +276,7 @@ function generation()
 
         }
 
-        if ($_GET['Адреса'] == 'on') {
+        if ($_GET['sql_adres_text'] != '') {
 
             $result_text .= " <div><b>Адреса:</b> ";
             $result_text .= gen_address();
@@ -300,7 +284,7 @@ function generation()
 
         }
 
-        if ($_GET['Професія'] == 'on') {
+        if ($_GET['sql_profesia_text'] != '') {
 
             $result_text .= " <div><b>Професія:</b> ";
             $result_text .= gen_profession();
@@ -308,56 +292,56 @@ function generation()
 
         }
 
-        if ($_GET['Номер'] == 'on') {
+        if ($_GET['sql_nomer_text'] != '') {
             $result_text .= " <div><b>Номер:</b> ";
             $result_text .= gen_nomer_php();
             $result_text .= "</div> ";
         }
 
-        if ($_GET['Мова'] == 'on') {
+        if ($_GET['sql_language_text'] != '') {
             $result_text .= " <div><b>Іноземна мова:</b>";
             $result_text .= gen_lang_php();
             $result_text .= "</div> ";
 
         }
 
-        if ($_GET['Дата'] == 'on') {
+        if ($_GET['sql_date_text'] != '') {
             $result_text .= " <div><b>Дата народження:</b> ";
             $result_text .= gen_randomDate_php();
             $result_text .= "</div> ";
         }
 
-        if ($_GET['Колір'] == 'on') {
+        if ($_GET['sql_color_text'] != '') {
             $result_text .= " <div><b>Улюблений колір:</b> ";
             $result_text .= gen_color_php();
             $result_text .= "</div> ";
         }
 
-        if ($_GET['Зріст'] == 'on') {
+        if ($_GET['sql_height_text'] != '') {
             $result_text .= " <div><b>Зріст:</b> ";
             $result_text .= gen_height_php();
             $result_text .= "</div> ";
         }
 
-        if ($_GET['Вага'] == 'on') {
+        if ($_GET['sql_weight_text'] != '') {
             $result_text .= " <div><b>Вага:</b> ";
             $result_text .= gen_weight_php();
             $result_text .= "</div> ";
         }
 
-        if ($_GET['Пошта'] == 'on') {
+        if ($_GET['sql_email_text'] != '') {
             $result_text .= " <div><b>Пошта:</b> ";
             $result_text .= gen_email_php();
             $result_text .= "</div> ";
         }
 
-        if ($_GET['Логін'] == 'on') {
+        if ($_GET['sql_login_text'] != '') {
             $result_text .= " <div><b>Логін:</b> ";
             $result_text .= gen_login_php();
             $result_text .= "</div> ";
         }
 
-        if ($_GET['Пароль'] == 'on') {
+        if ($_GET['sql_password_text'] != '') {
             $result_text .= " <div><b>Пароль:</b> ";
             $result_text .= gen_password_php();
             $result_text .= "</div> ";
@@ -379,7 +363,7 @@ function generation()
 
 }
 
-generation();
+generation_sql();
 
 
 ?>
