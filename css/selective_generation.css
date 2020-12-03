@@ -61,7 +61,17 @@ body {
     background-color: #20acd9;
 }
 
+* input[type=submit], * input[type=reset] {
+    background-color: rgb(72, 203, 142);
+    margin-top: 10px;
+    width: 120px;
 
+    border-radius: 10px 10px 10px 10px;
+}
+.gen_a{
+    display: flex;
+    justify-content:center;
+}
 @media only screen and (max-device-width: 970px) {
     input[type=checkbox] {
         margin-top: 10px;
@@ -74,7 +84,13 @@ body {
     * {
         font-size: 50px;
     }
+    * input[type=submit], * input[type=reset] {
+        background-color: rgb(72, 203, 142);
+        margin-top: 10px;
+        width: 400px;
 
+        border-radius: 10px 10px 10px 10px;
+    }
     .sql_generation_block {
         width: 94%;
     }

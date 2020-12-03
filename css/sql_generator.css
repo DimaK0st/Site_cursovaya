@@ -45,7 +45,15 @@ padding-left: 9px;
 * input[type=submit], * input[type=reset] {
     background-color: rgb(72, 203, 142);
     margin-top: 10px;
-    width: 130px;
+    width: 120px;
+
+    border-radius: 10px 10px 10px 10px;
+}
+
+#Downloading{
+    background-color: rgb(72, 203, 142);
+    margin-top: 10px;
+    width: 120px;
 
     border-radius: 10px 10px 10px 10px;
 }
@@ -142,7 +150,13 @@ font-size: 50px;
         width: 400px;
 
     }
+    #Downloading{
+        background-color: rgb(72, 203, 142);
+        margin-top: 10px;
+        width: 400px;
 
+        border-radius: 10px 10px 10px 10px;
+    }
     /*------------------------Меню------------------------*/
     #head_main {
         display: flex;

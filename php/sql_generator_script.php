@@ -1,12 +1,26 @@
 <?php
 $alphabet = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'v', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0');
-
 //Подключение к Базе Данных
 //$str_bd = new mysqli("localhost", "a0492513_gen_user", "zZ774488559966", "a0492513_gen_user");
 $str_bd = mysqli_connect("127.0.0.1", "root", "root", "gen_user");
 //Эта функция вызывает все остальные функции которые в свою очередь генерируют определённые значения
 
-$iter = 0;
+
+
+$arr_name_pole = array('create_table_text','sql_fio_text','sql_adres_text','sql_profesia_text','sql_nomer_text','sql_language_text','sql_date_text','sql_color_text','sql_height_text','sql_weight_text','sql_email_text','check_email_num','sql_login_text','check_login_num','sql_password_text','check_password_num','osobistist_num');
+
+foreach ($arr_name_pole as &$temp_iter_arr_) {
+    if ($_GET[$temp_iter_arr_] != "")
+        echo "<script>document.getElementById('$temp_iter_arr_').value='" . $_GET[$temp_iter_arr_] . "';</script>";
+}
+
+
+
+
+
+
+
+
 
 
 function gen_all_php()
@@ -66,7 +80,6 @@ function gen_email_php()
     $res_email .= $domain_email[random_int(0, count($domain_email) - 1)];
     return $res_email;
 }
-
 
 function gen_lang_php()
 {
@@ -146,7 +159,6 @@ function gen_weight_php()
 function gen_fio($gender)
 {
     global $str_bd;
-
     //Выбор пола для получения количества записей в базе данных
     if ($gender == "1") {
         $strSQL = "SELECT COUNT(`kod_name`) as counter FROM `name_men` UNION SELECT COUNT(`kod_otchestvo`) as counter FROM `otchestvo_men`
@@ -156,7 +168,6 @@ function gen_fio($gender)
 UNION SELECT COUNT(`kod_otchestvo`) as counter FROM `otchestvo_women`
 UNION SELECT COUNT(`kod_surname`) as counter FROM `surname_woman`";
     }
-
     //Выполнение запроса
     $r = mysqli_query($str_bd, $strSQL);
 
@@ -246,9 +257,13 @@ function gen_profession()
 
 }
 
-function generation_sql()
+function generation_sql2()
 {
     global $str_bd;
+
+    $arr_insert = array();
+
+
     $iteration = 0;
     $osobistist_num = 1;
     $gender = $_GET['course'];   //get запрос с значениями пола, если рандом, то присваиваем 1 или 2 (1- мужской, 2- женский)
@@ -258,112 +273,216 @@ function generation_sql()
     }
 
     $result_text = "";
+    $result_text_file = "";
 
     while ($iteration < $osobistist_num) {
-        $result_text .= "<div class='result_from_forma' style='word-wrap: break-word'>";
+
+        $arr_insert_temp = array();
+
 
         if ($_GET['sql_fio_text'] != '') {
 
-            $result_text .= " <div><b>ПІБ:</b> ";
             if ($gender == "3") {
                 global $gender_temp;
                 $gender_temp = random_int(1, 2);
-                $result_text .= gen_fio($gender_temp);
+                array_push($arr_insert_temp, "`" . gen_fio($gender_temp) . "`");
             } else {
-                $result_text .= gen_fio($gender);
+                array_push($arr_insert_temp, "`" . gen_fio($gender) . "`");
             }
-            $result_text .= "</div> ";
 
         }
 
         if ($_GET['sql_adres_text'] != '') {
-
-            $result_text .= " <div><b>Адреса:</b> ";
-            $result_text .= gen_address();
-            $result_text .= "</div> ";
-
+            array_push($arr_insert_temp, "`" . gen_address() . "`");
         }
 
         if ($_GET['sql_profesia_text'] != '') {
-
-            $result_text .= " <div><b>Професія:</b> ";
-            $result_text .= gen_profession();
-            $result_text .= "</div> ";
-
+            array_push($arr_insert_temp, "`" . gen_profession() . "`");
         }
 
         if ($_GET['sql_nomer_text'] != '') {
-            $result_text .= " <div><b>Номер:</b> ";
-            $result_text .= gen_nomer_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_nomer_php() . "`");
         }
 
         if ($_GET['sql_language_text'] != '') {
-            $result_text .= " <div><b>Іноземна мова:</b>";
-            $result_text .= gen_lang_php();
-            $result_text .= "</div> ";
-
+            array_push($arr_insert_temp, "`" . gen_lang_php() . "`");
         }
 
         if ($_GET['sql_date_text'] != '') {
-            $result_text .= " <div><b>Дата народження:</b> ";
-            $result_text .= gen_randomDate_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_randomDate_php() . "`");
         }
 
         if ($_GET['sql_color_text'] != '') {
-            $result_text .= " <div><b>Улюблений колір:</b> ";
-            $result_text .= gen_color_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_color_php() . "`");
         }
 
         if ($_GET['sql_height_text'] != '') {
-            $result_text .= " <div><b>Зріст:</b> ";
-            $result_text .= gen_height_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_height_php() . "`");
         }
 
         if ($_GET['sql_weight_text'] != '') {
-            $result_text .= " <div><b>Вага:</b> ";
-            $result_text .= gen_weight_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_weight_php() . "`");
         }
 
         if ($_GET['sql_email_text'] != '') {
-            $result_text .= " <div><b>Пошта:</b> ";
-            $result_text .= gen_email_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_email_php() . "`");
         }
 
         if ($_GET['sql_login_text'] != '') {
-            $result_text .= " <div><b>Логін:</b> ";
-            $result_text .= gen_login_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_login_php() . "`");
         }
 
         if ($_GET['sql_password_text'] != '') {
-            $result_text .= " <div><b>Пароль:</b> ";
-            $result_text .= gen_password_php();
-            $result_text .= "</div> ";
+            array_push($arr_insert_temp, "`" . gen_password_php() . "`");
         }
 
+        $temp_for = "(";
+        for ($i = 0; $i < count($arr_insert_temp); $i++) {
+            if ($i != 0) {
+                $temp_for .= ", ";
+            }
 
-        $result_text .= "</div>";
-        $result_text .= "<br> <hr>";
+            $temp_for .= $arr_insert_temp[$i];
+
+
+        }
+        $temp_for .= ")";
+        array_push($arr_insert, $temp_for );
+
 
         $iteration++;
     }
 
+    for ($i = 0; $i < count($arr_insert); $i++) {
+        if ($i != 0) {
+            $result_text .= ", ". "<br><br>";
+            $result_text_file .= ", ";
+        }
+
+        $result_text.=$arr_insert[$i];
+        $result_text_file.=$arr_insert[$i];
 
 
-    echo $result_text;
+    }
+
+    echo $result_text.";";
+    return $result_text_file.";";
 
 //Закрываем поток обмена с базой данных
     mysqli_close($str_bd);
 
 }
 
-generation_sql();
 
+function generation_sql1()
+{
+    $arr_insert = array();
+    $arr_create_db = array();
+
+    $result_create_database = "CREATE TABLE `" . $_GET['create_table_text'] . "` ( <br>";
+    $result_create_database_file = "CREATE TABLE `" . $_GET['create_table_text'] . "` ( ";
+    $result_insert_text = "<br> INSERT INTO`" . $_GET['create_table_text'] . "`(";
+    $result_insert_text_file = "INSERT INTO`" . $_GET['create_table_text'] . "`(";
+
+    if ($_GET['sql_fio_text'] != '') {
+
+
+        array_push($arr_insert, "`" . $_GET['sql_fio_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_fio_text'] . "`");
+
+    }
+
+    if ($_GET['sql_adres_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_adres_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_adres_text'] . "`");
+
+    }
+
+    if ($_GET['sql_profesia_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_profesia_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_profesia_text'] . "`");
+
+    }
+
+    if ($_GET['sql_nomer_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_nomer_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_nomer_text'] . "`");
+    }
+
+    if ($_GET['sql_language_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_language_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_language_text'] . "`");
+
+    }
+
+    if ($_GET['sql_date_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_date_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_date_text'] . "`");
+    }
+
+    if ($_GET['sql_color_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_color_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_color_text'] . "`");
+    }
+
+    if ($_GET['sql_height_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_height_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_height_text'] . "`");
+    }
+
+    if ($_GET['sql_weight_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_weight_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_weight_text'] . "`");
+    }
+
+    if ($_GET['sql_email_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_email_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_email_text'] . "`");
+    }
+
+    if ($_GET['sql_login_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_login_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_login_text'] . "`");
+    }
+
+    if ($_GET['sql_password_text'] != '') {
+        array_push($arr_insert, "`" . $_GET['sql_password_text'] . "`");
+        array_push($arr_create_db, "`" . $_GET['sql_password_text'] . "`");
+    }
+
+    for ($i = 0; $i < count($arr_insert); $i++) {
+
+        if ($i != 0) {
+            $result_insert_text .= ", ";
+            $result_insert_text_file .= ", ";
+        }
+        if ($i < count($arr_create_db) - 1) {
+            $result_create_database .= $arr_create_db[$i] . " text, <br>";
+            $result_create_database_file .= $arr_create_db[$i] . " text, ";
+        } else {
+            $result_create_database .= $arr_create_db[$i] . " text ";
+            $result_create_database_file .= $arr_create_db[$i] . " text ); ";
+        }
+
+        $result_insert_text .= $arr_insert[$i];
+        $result_insert_text_file .= $arr_insert[$i];
+
+    }
+    $result_insert_text .= ") VALUES <br><br>";
+    $result_insert_text_file .= ") VALUES ";
+    $result_create_database.="); <br>";
+    echo $result_create_database . $result_insert_text;
+
+    return $result_create_database_file . $result_insert_text_file;
+}
+
+
+if ($_GET['generate_n_user_submit']=="Згенерувати"){
+
+    $res1= generation_sql1();
+    $res2= generation_sql2();
+    $full_res=$res1.$res2;
+    echo "<script>document.getElementById('temp_reshenie').value='$full_res'</script>";
+}
 
 ?>

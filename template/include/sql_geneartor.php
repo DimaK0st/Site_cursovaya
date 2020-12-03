@@ -9,7 +9,22 @@
 
     <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
+    <script type="text/javascript" >
+        function download(obj) {
+            var str = JSON.stringify(obj);
+            var blob = new Blob( [  str ], {
+                type: 'application/octet-stream'
+            });
 
+            var url = URL.createObjectURL( blob );
+            var link = document.createElement( 'a' );
+            link.setAttribute( 'href', url );
+            link.setAttribute( 'download', 'from_generator_people.txt' );
+            var event = document.createEvent( 'MouseEvents' );
+            event.initMouseEvent( 'click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+            link.dispatchEvent( event );
+        }
+    </script>
 
 </head>
 
@@ -22,13 +37,13 @@
     ?>
 </header>
 
-<FORM action="selective_generation.php" method=get>
+<FORM action="sql_geneartor.php" method=get>
 
     <div class="sql_generation_block">
 
         <div class="info_menu">
 
-            <span> &nbsp;&nbsp;&nbsp;&nbsp;Дана сторінка створює sql запит для бази даних. Якщо ви хочете щоб критерій був доданий до цього запиту, то привласніть йому будь яку назву</span>
+            <span> &nbsp;&nbsp;&nbsp;&nbsp;Ця сторінка створює sql запит для бази даних. Якщо ви хочете щоб критерій був доданий до цього запиту, то привласніть йому будь яку назву</span>
 
         </div>
         <br>
@@ -140,19 +155,23 @@
         <br>
         <div class="res_sql">
             <span> Кількість особистостей </span>
-            <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" maxlength="2">
-
+            <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" >
+            <input type="hidden" name="temp_reshenie" id="temp_reshenie" >
             <div class="gen_sql">
                 <input type="submit" id="generate_n_user_submit" name="generate_n_user_submit" value="Згенерувати">
                 <input type="reset" name="Reset" value="Очистити">
+<!--                <input type="button" name="Downloading" value="Скачати" onclick="download(document.querySelector('#result').innerHTML )">-->
+                <input type="button" name="Downloading" id="Downloading" value="Скачати" onclick="download(document.getElementById('temp_reshenie').value)">
             </div>
         </div>
         <br><br>
 
-        <div class="result_from_php">
-            <?
+        <div class="result_from_php" id="result_from_php">
+            <a id="result">
 
-            include "../../php/selective_generation_script.php";
+                <?
+
+            include "../../php/sql_generator_script.php";
 
             ?>
 

@@ -121,9 +121,10 @@
             <br>
             <span> Кількість особистостей </span>
             <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" maxlength="2">
+            <div class="gen_a">
             <input type="submit" id="generate_n_user_submit" name="generate_n_user_submit" value="Згенерувати">
             <input type="reset" name="Reset" value="Обрати всі">
-
+                </div>
             <br><br>
 
             <div class="result_from_php">
