@@ -11,6 +11,9 @@
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
 
 
+    <meta name="viewport" content="user-scalable=0"> <!-- для того что бы на телефоне страница не зумилась-->
+
+
 </head>
 
 

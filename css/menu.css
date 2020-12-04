@@ -5,9 +5,11 @@
     border-radius: 10px 10px 0 0;
 }
 
-#head_main, #head_main li {
-    padding: 0;
-    width: 60%;
+#head_main {
+
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 660px;
     margin: auto;
 }
 

@@ -9,7 +9,11 @@
 
     <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
-    <script type="text/javascript" >
+
+    <meta name="viewport" content="user-scalable=0"> <!-- для того что бы на телефоне страница не зумилась-->
+
+
+    <script>
         function download(obj) {
             var str = JSON.stringify(obj);
             var blob = new Blob( [  str ], {
@@ -167,7 +171,7 @@
         <br><br>
 
         <div class="result_from_php" id="result_from_php">
-            <a id="result">
+
 
                 <?
 
@@ -178,8 +182,6 @@
         </div>
     </div>
 
-
-    </div>
 
 </FORM>
 <footer>

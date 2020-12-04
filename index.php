@@ -13,6 +13,8 @@
     <title>Генератор особистості</title>
     <link rel="shortcut icon" href="/image/ico.ico" type="image/x-icon">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 </head>
 
@@ -32,6 +34,22 @@
         <br>
 
         <input name="all" type="hidden" value="find">
+
+
+
+        <div class="demo">
+            <input type="checkbox" id="hd-1" class="hide"/>
+            <label for="hd-1" >Натисніть для перегляду інформації про сторінку</label>
+            <div>
+                Ця сторінка створена для генерації певної інформації для обраного поля, або всієї інформації за допомогою кнопки внизу. <br>Кнопка "copy" скопіює текст з полю яке знаходиться під нею
+                </div>
+            <br/>
+            <br/>
+        </div>
+
+
+
+
 
 
         <a>Оберіть стать:</a>
@@ -151,8 +169,8 @@
         <div class="nav_btn">
 
             <input type="reset" id="nav_reset" name="Reset" value="Очистити">
-            <input type="submit" id="nav_submit" name="all_gener" value="Згенерувати" onClick="document.location = '?id=1'"/>
-            <input type="button" value="copy" onclick="download('asdadsf')">
+            <input type="submit" id="nav_submit" name="all_gener" value="Згенерувати все"
+                   onClick="document.location = '?id=1'"/>
         </div>
     </div>
 </FORM>

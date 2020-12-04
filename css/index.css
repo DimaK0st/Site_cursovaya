@@ -46,11 +46,11 @@ body {
 
 .generator {
 
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 660px;
     margin-left: auto;
     margin-right: auto;
-    width: 54%;
     background-color: #06799f;
 
 
@@ -62,13 +62,12 @@ body {
 }
 
 .btn_copy input[type=button] {
-    width: 45px;
+    width: 55px;
     background-color: rgb(72, 203, 142);
 
 }
 
 #nav_reset, #nav_submit {
-    width: 120px;
 
     margin-left: auto;
     margin-right: auto;
@@ -80,27 +79,63 @@ body {
 }
 
 
-@media only screen and (max-device-width: 970px){
+/* скрываем чекбоксы и блоки с содержанием */
+.hide {
+    display: none;
+}
+.hide + label ~ div{
+    display: none;
+}
+/* оформляем текст label */
+.hide + label {
+    border-bottom: 1px dotted #000000;
+    padding: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+}
+
+
+/* вид текста label при активном переключателе */
+.hide:checked + label {
+    color: #000000;
+    border-bottom: 0;
+}
+/* когда чекбокс активен показываем блоки с содержанием  */
+.hide:checked + label + div {
+    display: block;
+    background-color: rgb(57, 174, 207);
+    -moz-box-shadow: inset 3px 3px 10px #06799f;
+    -webkit-box-shadow: inset 3px 3px 10px #06799f;
+    box-shadow: inset 3px 3px 10px #06799f;
+    padding: 10px;
+}
+
+
+
+
+@media (max-width: 700px){
     input[type="radio" i] {
-        height:35px; width:35px;
+        height:15px; width:15px;
+    }
+    #footer {
+        width: 96%;
     }
 
-
     * {
-        font-size: 50px;
     }
 
     * input[type=button], * input[type=submit], * input[type=reset] {
-        width: 470px;
+        width: 170px;
     }
 
     .login_num [type=text], .password_num [type=text], .email_num [type=text] {
-        width: 160px;
+        width: 60px;
         height: auto;
     }
 
     .generator {
-        width: 94%;
+        width: 96%;
     }
 
     .btn_copy {
@@ -108,7 +143,7 @@ body {
     }
 
     .btn_copy input[type=button] {
-        width: 145px;
+        width: 60px;
     }
 
     #nav_reset, #nav_submit {
@@ -124,18 +159,15 @@ body {
 
     #head_main {
         display: flex;
-    }
-
-    #head_main, #head_main li {
-        width: 100%;
+        width: 96%;
+        text-align: center;
+        align-content: center;
+        align-items: center;
     }
 
     #head_main li {
 
         height: 100%;
-        text-align: center;
-        align-content: center;
-        align-items: center;
     }
 
     #head_main a {
