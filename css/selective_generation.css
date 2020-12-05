@@ -8,17 +8,19 @@
 body {
     margin: 0px;
     background-color: #494343;
-
 }
+ *{
 
+     font-size: 18px;
+ }
 
 .sql_generation_block {
-    padding: 20px 3% 10px 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 660px;
     margin-left: auto;
     margin-right: auto;
-    width: 54%;
     background-color: #06799f;
-    font-size: 18px;
 }
 
 .check_block, .check_num_block {
@@ -29,8 +31,9 @@ body {
 }
 
 #osobistist_num {
-    width: 60px;
+    width: 65px;
 
+    font-size: 16px;
     text-align: center;
     border-radius: 10px 10px 10px 10px;
 }
@@ -43,12 +46,12 @@ body {
 
 #check_password_num, #check_email_num, #check_login_num {
 
-    width: 45px;
+    width: 55px;
     height: 20px;
     margin-right: 3px;
     padding: 0;
     text-align: center;
-
+font-size: 16px;
     text-indent: 0px;
     text-align: center;
     border-radius: 10px 10px 10px 10px;
@@ -68,59 +71,66 @@ body {
 
     border-radius: 10px 10px 10px 10px;
 }
-.gen_a{
-    display: flex;
-    justify-content:center;
+
+#generate_n_user_submit, #Reset {
+
+    margin-left: auto;
+    margin-right: auto;
 }
-@media only screen and (max-device-width: 970px) {
+
+.gen_a{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 690px){
     input[type=checkbox] {
-        margin-top: 10px;
-        height:35px; width:35px;
+        margin-top: 2px;
+        height:15px; width:15px;
 
     }
     input[type="radio" i] {
-        height:35px; width:35px;
-    }
-    * {
-        font-size: 50px;
+        height:15px; width:15px;
     }
     * input[type=submit], * input[type=reset] {
         background-color: rgb(72, 203, 142);
         margin-top: 10px;
-        width: 400px;
-
         border-radius: 10px 10px 10px 10px;
     }
     .sql_generation_block {
-        width: 94%;
+        width: 96%;
     }
 
     #osobistist_num {
-        width: 220px;
+        width: 80px;
     }
 
     #check_password_num, #check_email_num, #check_login_num {
 
-        width: 160px;
+        width: 60px;
         height: auto;
     }
 
 
+    #generate_n_user_submit, #Reset {
+        width: 420px;
+        margin-bottom: 20px;
+    }
     /*------------------------Меню------------------------*/
+
     #head_main {
         display: flex;
-    }
-
-    #head_main, #head_main li {
-        width: 100%;
+        width: 96%;
+        text-align: center;
+        align-content: center;
+        align-items: center;
     }
 
     #head_main li {
 
         height: 100%;
-        text-align: center;
-        align-content: center;
-        align-items: center;
     }
 
     #head_main a {
@@ -132,4 +142,8 @@ body {
     }
 
     /*---------------------------------------------*/
+
+    #footer {
+        width: 96%;
+    }
 }

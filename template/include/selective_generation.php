@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/drop_text.css">
     <link rel="stylesheet" href="../../css/selective_generation.css">
 
     <title>Генератор особистості</title>
@@ -25,9 +26,25 @@
     ?>
 </header>
 
+
+
+
 <FORM action="selective_generation.php" method=get>
 
     <div class="sql_generation_block">
+
+
+        <div class="demo">
+            <br>
+            <input type="checkbox" id="hd-1" class="hide"/>
+            <label for="hd-1" > Відобразити/приховати інформацію про сторінку</label>
+            <div>
+                Ця сторінка створена для генерації певної інформації обраного поля за допомогою checkbox, або всієї інформації за допомогою кнопки обрати всі. <br>У полі кількість можна вказати скільки записів потрібно створити з обраними полями.
+            </div>
+            <br>
+            <br>
+        </div>
+
         <div class="check_gender">
             <a>Оберіть стать:</a>
             <input type="radio" name="course" value="1"/><abbr title="Чоловіча"> Ч. </abbr>
@@ -126,7 +143,7 @@
             <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" maxlength="2">
             <div class="gen_a">
             <input type="submit" id="generate_n_user_submit" name="generate_n_user_submit" value="Згенерувати">
-            <input type="reset" name="Reset" value="Обрати всі">
+            <input type="reset" id="Reset" name="Reset" value="Обрати всі">
                 </div>
             <br><br>
 

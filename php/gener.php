@@ -117,7 +117,7 @@ foreach ($sum_arr_text as &$temp_iter_arr_) {
 }
 
 //Здесь генерируются полностью все значения в поля
-if ($_GET["all_gener"] == 'Згенерувати') {
+if ($_GET["all_gener"] == 'Згенерувати все') {
     gen_fio($gender);
     gen_address();
     gen_profession();

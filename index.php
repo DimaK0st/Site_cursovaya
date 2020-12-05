@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/drop_text.css">
 
 
     <script type="text/javascript" src="js/generate.js"></script>
@@ -31,32 +32,28 @@
 
 <FORM action="index.php" method=get>
     <div class="generator">
-        <br>
 
         <input name="all" type="hidden" value="find">
-
-
-
+        <br>
         <div class="demo">
-            <input type="checkbox" id="hd-1" class="hide"/>
-            <label for="hd-1" >Натисніть для перегляду інформації про сторінку</label>
+            <input type="checkbox"  id="hd-1" class="hide"/>
+            <label for="hd-1"> Відобразити/приховати інформацію про сторінку</label>
             <div>
-                Ця сторінка створена для генерації певної інформації для обраного поля, або всієї інформації за допомогою кнопки внизу. <br>Кнопка "copy" скопіює текст з полю яке знаходиться під нею
-                </div>
-            <br/>
-            <br/>
+                Ця сторінка створена для генерації SQL запитів з певною введеною інформацією обраного поля (Щоб поле
+                вважалось обраним, йому потрібно привласнити ім'я), або всієї інформації за допомогою
+                кнопки внизу. <br>Кнопка "copy" скопіює текст з полю яке знаходиться під нею
+            </div>
+            <br>
+            <br>
         </div>
 
 
-
-
-
-
-        <a>Оберіть стать:</a>
-        <input type="radio" name="course" value="1"/><abbr title="Чоловіча"> Ч. </abbr>
-        <input type="radio" name="course" value="2"/><abbr title="Жіноча"> Ж. </abbr>
-        <input type="radio" name="course" checked value="3"/>Випадкова
-
+        <div class="radio_text">
+            <a>Оберіть стать:</a>
+            <input type="radio" name="course" value="1"/><abbr title="Чоловіча"> Ч. </abbr>
+            <input type="radio" name="course" value="2"/><abbr title="Жіноча"> Ж. </abbr>
+            <input type="radio" name="course" checked value="3"/>Випадкова
+        </div>
 
         <div class="fio">
             <input type="submit" name="fio_btn" id="fio_btn" value="Оновити ПІБ">

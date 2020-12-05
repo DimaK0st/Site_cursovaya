@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/drop_text.css">
     <link rel="stylesheet" href="../../css/sql_generator.css">
 
     <title>Генератор особистості</title>
@@ -41,15 +42,27 @@
     ?>
 </header>
 
+
+
+
+
+
+
 <FORM action="sql_geneartor.php" method=get>
 
     <div class="sql_generation_block">
 
-        <div class="info_menu">
-
-            <span> &nbsp;&nbsp;&nbsp;&nbsp;Ця сторінка створює sql запит для бази даних. Якщо ви хочете щоб критерій був доданий до цього запиту, то привласніть йому будь яку назву</span>
-
+        <div class="demo">
+            <br>
+            <input type="checkbox" id="hd-1" name="hd-1" class="hide"/>
+            <label for="hd-1" > Відобразити/приховати інформацію про сторінку</label>
+            <div>
+                <span> &nbsp;&nbsp;&nbsp;&nbsp;Ця сторінка створює sql запит для бази даних. Якщо ви хочете щоб критерій був доданий до цього запиту, то привласніть йому будь яку назву</span>
+            </div>
+            <br>
+            <br>
         </div>
+
         <br>
         <div class="check_gender">
             <a>Оберіть стать:</a>

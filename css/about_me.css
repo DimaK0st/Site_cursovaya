@@ -1,12 +1,10 @@
 .about_me_block {
-    padding: 20px 3% 10px 3%;
-    display: flex;
-    flex-direction: column;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 660px;
     margin-left: auto;
     margin-right: auto;
-    width: 54%;
     background-color: #06799f;
-    font-size: 18px;
 }
 
 .about {
@@ -60,16 +58,17 @@ body {
 }
 
 
-@media only screen and (max-device-width: 970px) {
-    *{
-        font-size: 50px;
-    }
+@media (max-width: 690px) {
     .about {
         display: block;
     }
 
+    #footer{
+        width: 96%;
+    }
+
     .about_me_block {
-        width: 94%;
+        width: 96%;
     }
 
     .image_block {
@@ -86,20 +85,18 @@ body {
     }
 
     /*------------------------Меню------------------------*/
+
     #head_main {
         display: flex;
-    }
-
-    #head_main, #head_main li {
-        width: 100%;
+        width: 96%;
+        text-align: center;
+        align-content: center;
+        align-items: center;
     }
 
     #head_main li {
 
         height: 100%;
-       text-align: center;
-        align-content: center;
-        align-items: center;
     }
 
     #head_main a {
@@ -111,5 +108,6 @@ body {
     }
 
     /*---------------------------------------------*/
+
 
 }

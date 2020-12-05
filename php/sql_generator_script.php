@@ -21,8 +21,6 @@ foreach ($arr_name_pole as &$temp_iter_arr_) {
 
 
 
-
-
 function gen_all_php()
 {
     gen_nomer_php();

@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="../../css/about_me.css">
-    <script type="text/javascript">
-        <!-- function on_off(name) {
-            document.getElementById(name).style.display = "block"
-        } -->
+    <script>
+        function on_off(name) {
+            document.getElementById(name).style.display = "block"; }
     </script>
     <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
