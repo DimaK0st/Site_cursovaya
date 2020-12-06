@@ -10,6 +10,7 @@ body {
     outline: none;
 }
 
+ol {margin-left: 15px;}
 .radio_text{
     color: white;
 }
@@ -18,7 +19,7 @@ body {
 * input[type=text] {
     margin-top: 2px;
     outline: none;
-padding: 3px 0 3px 0;
+    padding: 3px 0 3px 0;
     border: none;
     width: calc(100%);
     border: solid 1px #6a6a6a;
@@ -50,30 +51,24 @@ padding: 3px 0 3px 0;
 }
 
 .generator {
-
     padding-left: 2%;
     padding-right: 2%;
     width: 660px;
     margin-left: auto;
     margin-right: auto;
     background-color: #06799f;
-
-
 }
 
 .btn_copy {
-
     float: right;
 }
 
 .btn_copy input[type=button] {
     width: 55px;
     background-color: rgb(72, 203, 142);
-
 }
 
 #nav_reset, #nav_submit {
-
     margin-left: auto;
     margin-right: auto;
 }
@@ -133,7 +128,6 @@ padding: 3px 0 3px 0;
         align-content: center;
         align-items: center;
     }
-
     #head_main li {
 
         height: 100%;
