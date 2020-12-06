@@ -379,7 +379,9 @@ function generation()
 
 }
 
-generation();
+
+if($_GET['generate_n_user_submit']!=""){
+generation();}
 
 
 ?>

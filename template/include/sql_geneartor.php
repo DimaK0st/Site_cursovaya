@@ -16,17 +16,17 @@
     <script>
         function download(obj) {
             var str = JSON.stringify(obj);
-            var blob = new Blob( [  str ], {
+            var blob = new Blob([str], {
                 type: 'application/octet-stream'
             });
 
-            var url = URL.createObjectURL( blob );
-            var link = document.createElement( 'a' );
-            link.setAttribute( 'href', url );
-            link.setAttribute( 'download', 'from_generator_people.txt' );
-            var event = document.createEvent( 'MouseEvents' );
-            event.initMouseEvent( 'click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
-            link.dispatchEvent( event );
+            var url = URL.createObjectURL(blob);
+            var link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'from_generator_people.txt');
+            var event = document.createEvent('MouseEvents');
+            event.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
+            link.dispatchEvent(event);
         }
     </script>
 
@@ -42,11 +42,6 @@
 </header>
 
 
-
-
-
-
-
 <FORM action="sql_geneartor.php" method=get>
 
     <div class="sql_generation_block">
@@ -54,15 +49,31 @@
         <div class="demo">
             <br>
             <input type="checkbox" id="hd-1" name="hd-1" class="hide"/>
-            <label for="hd-1" > Відобразити/приховати інформацію про сторінку</label>
+            <label for="hd-1"> Натисніть, щоб відобразити/приховати інформацію щодо користування сторінкою</label>
             <div>
-                <span> &nbsp;&nbsp;&nbsp;&nbsp;Ця сторінка створює sql запит для бази даних. Якщо ви хочете щоб критерій був доданий до цього запиту, то привласніть йому будь яку назву</span>
+
+<ol>
+    &nbsp;&nbsp;&nbsp;Ця сторінка створена більш для розробників та тестувальників ніж для звичайних людей, бо вона генерує запити за допомогою яких вносяться дані до БД.
+
+    <br><br>&nbsp;&nbsp;&nbsp;План роботи зі сторінкою:
+                    <li>У відповідному полі задайте назву для маймутньої/існуючої бази даних</li>
+                    <li> Для того щоб критерій був доданий до результуючого запиту, потрібно привласнити йому будь яку назву</li>
+                    <li> В поле "Розмір" є можливість ввести кількість необхідних символів для генерації.</li>
+                    <li> В полі "Кількість" зазначається бажана кількість записів.</li>
+                    <li>Кнопка "Згенерувати", генерує запит за обраними критеріями. </li>
+                    <li> Кнопка "Скачати", скачає отриманий запит на ваш копм'ютер</li>
+                    <br>
+                </ol>
+
+
             </div>
             <br>
             <br>
         </div>
 
         <br>
+
+        <div class="bg_text_sql">
         <div class="check_gender">
             <a>Оберіть стать:</a>
             <input type="radio" name="course" value="1"/><abbr title="Чоловіча"> Ч. </abbr>
@@ -169,15 +180,21 @@
 
 
         <br>
-        <div class="res_sql">
+        <div class="num_count">
             <span> Кількість особистостей </span>
-            <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість" >
-            <input type="hidden" name="temp_reshenie" id="temp_reshenie" >
+            <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість">
+            <input type="hidden" name="temp_reshenie" id="temp_reshenie">
+
+        </div>
+</div>
+        <div class="res_sql">
+             <input type="hidden" name="temp_reshenie" id="temp_reshenie">
             <div class="gen_sql">
                 <input type="submit" id="generate_n_user_submit" name="generate_n_user_submit" value="Згенерувати">
                 <input type="reset" name="Reset" value="Очистити">
-<!--                <input type="button" name="Downloading" value="Скачати" onclick="download(document.querySelector('#result').innerHTML )">-->
-                <input type="button" name="Downloading" id="Downloading" value="Скачати" onclick="download(document.getElementById('temp_reshenie').value)">
+                <!--                <input type="button" name="Downloading" value="Скачати" onclick="download(document.querySelector('#result').innerHTML )">-->
+                <input type="button" name="Downloading" id="Downloading" value="Скачати"
+                       onclick="download(document.getElementById('temp_reshenie').value)">
             </div>
         </div>
         <br><br>
@@ -185,7 +202,7 @@
         <div class="result_from_php" id="result_from_php">
 
 
-                <?
+            <?
 
             include "../../php/sql_generator_script.php";
 

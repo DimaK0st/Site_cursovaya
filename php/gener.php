@@ -124,13 +124,13 @@ if ($_GET["all_gener"] == 'Згенерувати все') {
     echo "<script>gen_all();</script>";
 }
 // А это у меня определение что нужно вызвать из БД
-if ($_GET["fio_btn"] == 'Оновити ПІБ') {
+if ($_GET["fio_btn"] == 'Згенерувати ПІБ') {
     call_user_func('gen_fio', $gender);
 }
-if ($_GET["address_btn"] == "Оновити адресу") {
+if ($_GET["address_btn"] == "Згенерувати адресу") {
     call_user_func('gen_address');
 }
-if ($_GET["profession_btn"] == "Оновити професію") {
+if ($_GET["profession_btn"] == "Згенерувати професію") {
     call_user_func('gen_profession');
 }
 

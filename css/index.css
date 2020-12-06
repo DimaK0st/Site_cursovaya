@@ -10,7 +10,6 @@ body {
     outline: none;
 }
 
-ol {margin-left: 15px;}
 .radio_text{
     color: white;
 }
@@ -51,12 +50,11 @@ ol {margin-left: 15px;}
 }
 
 .generator {
-    padding-left: 2%;
-    padding-right: 2%;
     width: 660px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #06799f;
+    background-color: #2b52a0;
+    padding: 0 2% 10px 2%;
 }
 
 .btn_copy {
@@ -90,7 +88,7 @@ ol {margin-left: 15px;}
     }
 
     * input[type=button], * input[type=submit], * input[type=reset] {
-        width: 170px;
+        width: 195px;
     }
 
     .login_num [type=text], .password_num [type=text], .email_num [type=text] {

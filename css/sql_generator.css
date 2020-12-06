@@ -5,8 +5,10 @@
     padding-right: 0;
 }
 * {
-
-    font-size: 18px;}
+     font-size: 18px;
+     padding: 0;
+     outline: none;
+ }
 
 body {
     margin: 0px;
@@ -19,18 +21,26 @@ body {
         border-radius: 10px 10px 10px 10px;
         margin-top: 3px;
         padding-left: 9px;
-}
+        background-color: rgb(72, 203, 142);
+
+    }
 .res_sql{
     flex-wrap: wrap;
 }
-
+.bg_text_sql{
+    background-color: #20acd9;
+    border-radius: 10px 10px 10px 10px;
+padding: 5px;
+}
 .info_menu{
     font-size: 18px;
 }
 
 
 #create_table_text{
-padding-left: 9px;
+    background-color: rgb(72, 203, 142);
+
+    padding-left: 9px;
     width: 60%;
     font-size: 18px;
     border-radius: 10px 10px 10px 10px;
@@ -42,7 +52,7 @@ padding-left: 9px;
     width: 660px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #06799f;
+    background-color: #2b52a0;
 }
 * input[type=submit], * input[type=reset] {
     background-color: rgb(72, 203, 142);
@@ -69,6 +79,7 @@ padding-left: 9px;
 
 #osobistist_num {
     width: 80px;
+    background-color: rgb(72, 203, 142);
 
     text-align: center;
     border-radius: 10px 10px 10px 10px;
