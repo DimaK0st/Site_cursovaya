@@ -454,11 +454,11 @@ function generation_sql1()
             $result_insert_text .= ", ";
             $result_insert_text_file .= ", ";
         }
-        if ($i < count($arr_create_db) - 1) {
+        if ($i < count($arr_create_db)) {
             $result_create_database .= $arr_create_db[$i] . " text, <br>";
             $result_create_database_file .= $arr_create_db[$i] . " text, ";
         } else {
-            $result_create_database .= $arr_create_db[$i] . " text ";
+            $result_create_database .= $arr_create_db[$i] . " text ); ";
             $result_create_database_file .= $arr_create_db[$i] . " text ); ";
         }
 
@@ -469,6 +469,7 @@ function generation_sql1()
     $result_insert_text .= ") VALUES <br><br>";
     $result_insert_text_file .= ") VALUES ";
     $result_create_database.="); <br>";
+    $result_create_database_file.="); ";
     echo $result_create_database . $result_insert_text;
 
     return $result_create_database_file . $result_insert_text_file;

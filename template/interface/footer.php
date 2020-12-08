@@ -1,5 +1,5 @@
 <div id="footer">
-    <a style="text-align: center">
-        design by Dima.Kost
-    </a>
+        Всі збіги випадкові.<br>
+        <a href="/template/include/about_me.php">FAQ</a>
+
 </div>

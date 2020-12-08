@@ -23,7 +23,7 @@
             var url = URL.createObjectURL(blob);
             var link = document.createElement('a');
             link.setAttribute('href', url);
-            link.setAttribute('download', 'from_generator_people.txt');
+            link.setAttribute('download', 'from_generator_people.sql');
             var event = document.createEvent('MouseEvents');
             event.initMouseEvent('click', true, true, window, 1, 0, 0, 0, 0, false, false, false, false, 0, null);
             link.dispatchEvent(event);
@@ -33,7 +33,6 @@
 </head>
 
 
-<body>
 
 <header>
     <?
@@ -41,6 +40,7 @@
     ?>
 </header>
 
+<body>
 
 <FORM action="sql_geneartor.php" method=get>
 
@@ -52,20 +52,20 @@
             <label for="hd-1"> Натисніть, щоб відобразити/приховати інформацію щодо користування сторінкою</label>
             <div>
 
-<ol>
     &nbsp;&nbsp;&nbsp;Ця сторінка створена більш для розробників та тестувальників ніж для звичайних людей, бо вона генерує запити за допомогою яких вносяться дані до БД.
 
     <br><br>&nbsp;&nbsp;&nbsp;План роботи зі сторінкою:
+<ol>
                     <li>У відповідному полі задайте назву для маймутньої/існуючої бази даних</li>
                     <li> Для того щоб критерій був доданий до результуючого запиту, потрібно привласнити йому будь яку назву</li>
                     <li> В поле "Розмір" є можливість ввести кількість необхідних символів для генерації.</li>
                     <li> В полі "Кількість" зазначається бажана кількість записів.</li>
                     <li>Кнопка "Згенерувати", генерує запит за обраними критеріями. </li>
                     <li> Кнопка "Скачати", скачає отриманий запит на ваш копм'ютер</li>
-                    <br>
                 </ol>
 
 
+                    <br>
             </div>
             <br>
             <br>
@@ -183,7 +183,6 @@
         <div class="num_count">
             <span> Кількість особистостей </span>
             <input type="text" name="osobistist_num" id="osobistist_num" placeholder="Кількість">
-            <input type="hidden" name="temp_reshenie" id="temp_reshenie">
 
         </div>
 </div>

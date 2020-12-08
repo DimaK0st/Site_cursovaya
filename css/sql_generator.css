@@ -12,7 +12,7 @@
 
 body {
     margin: 0px;
-    background-color: #494343;
+    background-color: #5f73b4;
 
 }
     .sql_atributi input[type=text] {
@@ -21,7 +21,7 @@ body {
         border-radius: 10px 10px 10px 10px;
         margin-top: 3px;
         padding-left: 9px;
-        background-color: rgb(72, 203, 142);
+        background-color: rgb(164, 238, 199);
 
     }
 .res_sql{
@@ -38,7 +38,7 @@ padding: 5px;
 
 
 #create_table_text{
-    background-color: rgb(72, 203, 142);
+    background-color: rgb(164, 238, 199);
 
     padding-left: 9px;
     width: 60%;
@@ -55,7 +55,10 @@ padding: 5px;
     background-color: #2b52a0;
 }
 * input[type=submit], * input[type=reset] {
-    background-color: rgb(72, 203, 142);
+    outline: none;
+    border: none;
+    transition: background-color .3s, filter .3s;
+    background-color: limegreen;
     margin-top: 10px;
     width: 120px;
 
@@ -63,12 +66,32 @@ padding: 5px;
 }
 
 #Downloading{
-    background-color: rgb(72, 203, 142);
-    margin-top: 10px;
+    outline: none;
+    border: none;
+    transition: background-color .3s, filter .3s;
+    background-color: limegreen;
     width: 120px;
 
     border-radius: 10px 10px 10px 10px;
 }
+.res_sql input{
+    margin: 15px 3px 0 0;
+
+}
+
+
+ input[type=submit]:hover{
+    filter: drop-shadow(0 0 6px #48CB8E);
+    background-color: rgb(72, 203, 142);
+}
+ input[type=reset]:hover{
+     filter: drop-shadow(0 0 6px #48CB8E);
+     background-color: rgb(72, 203, 142);
+ }
+#Downloading:hover{
+     filter: drop-shadow(0 0 6px #48CB8E);
+     background-color: rgb(72, 203, 142);
+ }
 
 .check_block, .check_num_block {
     margin-top: 5px;
@@ -79,7 +102,7 @@ padding: 5px;
 
 #osobistist_num {
     width: 80px;
-    background-color: rgb(72, 203, 142);
+    background-color: rgb(164, 238, 199);
 
     text-align: center;
     border-radius: 10px 10px 10px 10px;
@@ -124,7 +147,7 @@ padding: 5px;
         height:15px; width:15px;
 
     }
-    input[type="radio" i] {
+    input[type="radio"] {
         height:15px; width:15px;
     }
 

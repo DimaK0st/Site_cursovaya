@@ -4,85 +4,30 @@
     width: 660px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #06799f;
-}
-
-.about {
-    display: flex;
-}
-
-* input[type=button], * input[type=submit], * input[type=reset] {
-    background-color: rgb(72, 203, 142);
-    width: 250px;
-    border-radius: 10px 10px 10px 10px;
+    background-color: #2b52a0;
 }
 
 body {
     margin: 0px;
-    background-color: #494343;
-    border-radius: 0 0 10px 10px;
-}
-
-.image_block {
-    background-color: #06799f;
-    margin-right: 10px;
-}
-
-.about_me_table_block {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#git, #teleg {
-    color: white;
-    font-weight: 800;
-    margin-left: auto;
-    display: none;
-}
-
-.github_block, .telegram_block {
-    margin-top: 10px;
-    display: flex;
+    background-color: #5f73b4;
 
 }
 
-.youtube {
-    margin: 40px auto 0px auto;
-
-    width: 100%;
-    height: 90%;
+*{
+    font-size: 18px;
 }
-
-.youtube_block {
-    height: 400px;
-}
-
 
 @media (max-width: 690px) {
-    .about {
-        display: block;
-    }
-
-    #footer{
-        width: 96%;
-    }
 
     .about_me_block {
         width: 96%;
     }
 
-    .image_block {
-        display: flex;
-        justify-content:center;
-        margin: auto 10px auto 0px;
+    .demo_3:checked + label + div {
+        background-color: #06799f;
 
     }
 
-
-    .github_block, .telegram_block {
-        margin-top: 10px;
-        display: flex;
-    }
 
     /*------------------------Меню------------------------*/
 
@@ -109,5 +54,9 @@ body {
 
     /*---------------------------------------------*/
 
+
+    #footer {
+        width: 96%;
+}
 
 }

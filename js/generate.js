@@ -74,18 +74,16 @@ function gen_color() {
 }
 
 function gen_randomDate(date1='01.01.1970', date2='01/01/2002'){
-    function getRandomArbitrary(min, max) {
-        return Math.random() * (max - min) + min;
+    function randomDate(start, end) {
+        return new Date(start.getTime()
+            + Math.random() * (end.getTime() - start.getTime()));
     }
-    var date1 = date1 || '01-01-1970'
-    var date2 = date2 || new Date().toLocaleDateString()
-    date1 = new Date(date1).getTime()
-    date2 = new Date(date2).getTime()
-    if( date1>date2){
-        document.getElementById("date_text").value = new Date(getRandomArbitrary(date2,date1)).toLocaleDateString()
-    } else{
-        document.getElementById("date_text").value = new Date(getRandomArbitrary(date1, date2)).toLocaleDateString()
-    }
+
+    var myDate  = randomDate(new Date(1974, 0, 1), new Date(2002,0,1));
+    document.getElementById("date_text").value = ( ('0' + myDate.getDate()).slice(-2)+ '-'
+        + ('0' + (myDate.getMonth() + 1)).slice(-2)+ '-'+ myDate.getFullYear()
+
+    );
 }
 
 function gen_login() {

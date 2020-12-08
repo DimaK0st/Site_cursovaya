@@ -3,10 +3,11 @@
     font-size: 18px;
     background: rgb(11, 44, 80);
     border-radius: 10px 10px 0 0;
+
 }
 
 #head_main {
-
+    display: flex;
     padding-left: 2%;
     padding-right: 2%;
     width: 660px;
@@ -24,10 +25,11 @@
     padding: 3px 0;
     color: #fff;
     text-decoration: none;
-
+    transition: background-color .3s, filter .3s;
 }
 
 #head_main a:hover {
+    filter: drop-shadow(0 0 6px #6091AC);
     border-radius: 10px 10px 0 0;
     background: rgb(96, 145, 172);
 }

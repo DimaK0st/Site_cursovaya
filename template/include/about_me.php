@@ -5,11 +5,10 @@
 
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/drop_text.css">
     <link rel="stylesheet" href="../../css/about_me.css">
-    <script>
-        function on_off(name) {
-            document.getElementById(name).style.display = "block"; }
-    </script>
+
+
     <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
 
@@ -18,12 +17,9 @@
 
 
 
-
 </head>
 
-
 <body>
-
 <header>
     <?
     include "../../template/interface/header.php";
@@ -31,60 +27,104 @@
 </header>
 
 
+
+
+
+
 <div class="about_me_block">
-    <div class="about" >
-        <div class="image_block">
-            <a href="http://csn.zntu.edu.ua">
-                <img src="..//../../image/csn_logo.png" alt="Перейти на сайт кафедри" width="200" height="100"
-                     vspace="10">
-            </a>
+
+    <div class="demo_1">
+        <br>
+        <input type="checkbox" id="hd_1" class="hide"/>
+        <label for="hd_1">Чи є генератор особистостей незаконним?</label>
+
+        <div>
+            Ні, генератор особистостей є цілком законний.<br>
+            Вся інформація на сайті генерується автоматично, та повністю не збігається з реальними людьми.
         </div>
+        <br>
+    </div>
 
-        <div class="about_me_table_block">
-            <TABLE border=1 align=center>
-                <TR>
-                    <TH COLSPAN=2>
-                        Про себе
-                    </TH>
-                </TR>
+    <div class="demo_2">
+        <br>
+        <input type="checkbox" id="hd_2" class="hide"/>
+        <label for="hd_2">Чи дозволено використовувати особистості згенеровані на сайті в своїх цілях?</label>
 
-                <TR>
-                    <TD align=center valign=middle>Навчаюсь в:</TD>
-                    <TD align=center valign=middle>НУ"ЗП"</TD>
-                </TR>
-                <TR>
-                    <TD align=center valign=middle>Курс:</TD>
-                    <TD align=center valign=middle>3 курс</TD>
-                </TR>
-                <TR>
-                    <TD align=center valign=middle>Кафедра:</TD>
-                    <TD align=center valign=middle>КСМ</TD>
-                </TR>
-                <TR>
-                    <TD align=center valign=middle>Мови програмування:</TD>
-                    <TD align=center valign=middle>Java, Python, C++, PHP, JS.</TD>
-                </TR>
-            </TABLE>
+        <div>
+        Так. Сайт був створенний для того, щоб люди могли генерувати особистості автоматично, а не витрачали свій час на те щоб їх самим вигадати, а потім використовували в своїх цілях будь де.
         </div>
+        <br>
     </div>
+
+
+
+    <div class="demo_4">
+        <br>
+        <input type="checkbox" id="hd_4" class="hide"/>
+        <label for="hd_4">Про генерацію ФІП:</label>
+
+        <div>
+            ФІП генерується з бази даних, в якій знаходиться близько тисячі записів імен, фамілій та по-батькові.
+        </div>
+        <br>
+    </div>
+
+
+
+    <div class="demo_5">
+        <br>
+        <input type="checkbox" id="hd_5" class="hide"/>
+        <label for="hd_5">Про генерацію Адреси:</label>
+
+        <div>
+        Під час генерації, назва міста, вулиці та індекс беруться з бази даних, яка була сформована за допомогою відкритого джерела Укрпошти, а будинки та квартири генеруються випадково.
+        </div>
+        <br>
+    </div>
+
+
+    <div class="demo_6">
+        <br>
+        <input type="checkbox" id="hd_6" class="hide"/>
+        <label for="hd_6">Про генерацію професії:</label>
+
+        <div>
+            Професія генерується з бази даних, в якій знаходиться близько трьох тисяч різновидних записів.
+        </div>
+        <br>
+    </div>
+
+
+    <div class="demo_7">
+        <br>
+        <input type="checkbox" id="hd_7" class="hide"/>
+        <label for="hd_7">Про генерацію інших даних:</label>
+
+        <div>
+            Інші дані генеруються довільно, не використовуючи базу даних, тому ймовірність співпадіння з реальними людьми дорівнює нулю.
+        </div>
+        <br>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <br>
-    <br>
-
-
-    <div class="github_block">
-        <input type="button" onclick="on_off('git')" value="GitHub">
-        <a href="https://github.com/DimaK0st" id="git" target="_blank">https://github.com/DimaK0st</a>
-    </div>
-    <div class="telegram_block">
-        <input type="button" onclick="on_off('teleg')" value="Telegram">
-        <a href="https://t.me/Dima_Koste" id="teleg" target="_blank">https://t.me/Dima_Koste</a>
-    </div>
-
-    <div class="youtube_block">
-        <iframe class="youtube" src="https://www.youtube.com/embed/l8CE6d_8ozw" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-    </div>
 </div>
 <footer>
     <?php

@@ -1,6 +1,6 @@
 body {
     margin: 0px;
-    background-color: #494343;
+    background-color: #5f73b4;
 
 }
 
@@ -29,12 +29,45 @@ body {
 }
 
 * input[type=button], * input[type=submit], * input[type=reset] {
-    background-color: rgb(72, 203, 142);
+    background-color: limegreen;
     margin-top: 10px;
     width: 225px;
-
     border-radius: 10px 10px 10px 10px;
+    outline: none;
+    border: none;
+    transition: background-color .3s, filter .3s;
+
 }
+
+.btn_copy {
+    float: right;
+}
+
+.btn_copy input[type=button] {
+    width: 55px;
+    outline: none;
+    border: none;
+    transition: background-color .3s, filter .3s;;
+    background-color: limegreen;
+}
+
+* input[type=button]:hover {
+    filter: drop-shadow(0 0 6px #48CB8E);
+    background-color: rgb(102, 227, 166);
+}
+* input[type=submit]:hover {
+    filter: drop-shadow(0 0 6px #48CB8E);
+    background-color: rgb(72, 203, 142);
+  }
+* input[type=reset]:hover {
+    filter: drop-shadow(0 0 6px #48CB8E);
+    background-color: rgb(72, 203, 142);
+      }
+.btn_copy input[type=button]:hover {
+    filter: drop-shadow(0 0 6px #48CB8E);
+    background-color: rgb(72, 203, 142);
+}
+
 
 .login_num [type=text], .password_num [type=text], .email_num [type=text] {
     width: 65px;
@@ -57,14 +90,6 @@ body {
     padding: 0 2% 10px 2%;
 }
 
-.btn_copy {
-    float: right;
-}
-
-.btn_copy input[type=button] {
-    width: 55px;
-    background-color: rgb(72, 203, 142);
-}
 
 #nav_reset, #nav_submit {
     margin-left: auto;
@@ -80,7 +105,7 @@ body {
 
 
 @media (max-width: 690px){
-    input[type="radio" i] {
+    input[type="radio"] {
         height:15px; width:15px;
     }
 
