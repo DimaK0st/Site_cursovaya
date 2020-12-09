@@ -2,13 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>Генератор особистості - масова генерація</title>
+    <meta name="description" content="Сайт для швидкого створення випадкових особистостей, корисний розробникам
+    і тестувальникам для налагодження і тестування сервісів.">
+    <meta name="keywords" content="генератор логінів, генератор паролів, рандомайзер, генератор паролів онлайн,
+     згенерувати пароль, генерація паролів, генератор логіна, генератор пошт, випадкова пошта, рандомний адреса
+     Україна, пошта, логін, Україна, адреса, ПІБ, на українському, вибіркова генерація"/>
+    <meta name="language" content="uk">
+
+
+
+
 
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/drop_text.css">
     <link rel="stylesheet" href="../../css/selective_generation.css">
 
-    <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
 
 
@@ -29,7 +39,8 @@
 <FORM action="selective_generation.php" method=get>
 
     <div class="sql_generation_block">
-
+        <H1 class="h1_hider">
+            Генератор особистості - масова генерація        </H1>
 
         <div class="demo">
             <br>

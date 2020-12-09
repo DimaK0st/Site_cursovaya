@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
 
+    <title>Генератор особистості - про сайт</title>
+    <meta name="description" content="Перелік най поширеніших запитань стосовно сайту.">
+    <meta name="keywords" content="генератор логінів, генератор паролів, про сайт, законність,
+     згенерувати пароль, генератор логіна, генератор пошт, випадкова пошта, Україна, пошта, логін,
+     Україна, адреса, ПІБ, українською"/>
+    <meta name="language" content="uk">
+
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/drop_text.css">
     <link rel="stylesheet" href="../../css/about_me.css">
 
-
-    <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
 
 
@@ -32,7 +37,9 @@
 
 
 <div class="about_me_block">
-
+    <H1 class="h1_hider">
+        Генератор особистості - про сайт
+    </H1>
     <div class="demo_1">
         <br>
         <input type="checkbox" id="hd_1" class="hide"/>
@@ -61,10 +68,10 @@
     <div class="demo_4">
         <br>
         <input type="checkbox" id="hd_4" class="hide"/>
-        <label for="hd_4">Про генерацію ФІП:</label>
+        <label for="hd_4">Про генерацію ПІБ:</label>
 
         <div>
-            ФІП генерується з бази даних, в якій знаходиться близько тисячі записів імен, фамілій та по-батькові.
+            ПІБ генерується з бази даних, в якій знаходиться близько тисячі записів імен, фамілій та по-батькові.
         </div>
         <br>
     </div>

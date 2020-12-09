@@ -6,6 +6,7 @@ ol {margin-left: 15px;}
 }
 .hide + label ~ div{
     display: none;
+    
 }
 /* оформляем текст label */
 .hide + label {

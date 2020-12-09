@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
 
+    <title>Генератор особистості - генерація sql</title>
+    <meta name="description" content="Сайт для швидкого створення випадкових особистостей, корисний розробникам
+    і тестувальникам для налагодження і тестування сервісів у вигляді qsl запиту.">
+    <meta name="keywords" content="генератор логінів, генератор паролів, рандомайзер, генератор паролів онлайн,
+     згенерувати пароль, генерація паролів, генератор логіна, генератор пошт, випадкова пошта, рандомний адреса
+     Україна, пошта, логін, Україна, адреса, ПІБ, українською"/>
+    <meta name="language" content="uk">
+
+
+
+
     <link rel="stylesheet" href="../../css/menu.css">
     <link rel="stylesheet" href="/css/footer.css">
     <link rel="stylesheet" href="/css/drop_text.css">
     <link rel="stylesheet" href="../../css/sql_generator.css">
 
-    <title>Генератор особистості</title>
     <link rel="shortcut icon" href="../../image/ico.ico" type="image/x-icon">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +55,9 @@
 <FORM action="sql_geneartor.php" method=get>
 
     <div class="sql_generation_block">
-
+        <H1 class="h1_hider">
+            Генератор особистості - головна
+        </H1>
         <div class="demo">
             <br>
             <input type="checkbox" id="hd-1" name="hd-1" class="hide"/>

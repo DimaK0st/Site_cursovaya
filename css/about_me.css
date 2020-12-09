@@ -13,6 +13,9 @@ body {
 
 }
 
+.h1_hider{
+    display: none;
+}
 *{
     font-size: 18px;
 }

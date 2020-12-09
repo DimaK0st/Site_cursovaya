@@ -10,6 +10,9 @@
      outline: none;
  }
 
+.h1_hider{
+    display: none;
+}
 body {
     margin: 0px;
     background-color: #5f73b4;

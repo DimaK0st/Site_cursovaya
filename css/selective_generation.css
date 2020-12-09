@@ -74,6 +74,9 @@ font-size: 16px;
     margin: auto;
     background-color: #20acd9;
 }
+.h1_hider{
+    display: none;
+}
 
 * input[type=submit], * input[type=reset] {
     outline: none;
