@@ -33,3 +33,28 @@
     border-radius: 10px 10px 0 0;
     background: rgb(96, 145, 172);
 }
+
+
+
+@media (max-width: 690px) {
+    #head_main {
+        display: flex;
+        width: 96%;
+        text-align: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    #head_main li {
+
+        height: 100%;
+    }
+
+    #head_main a {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        height: 100%;
+    }
+}

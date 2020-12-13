@@ -1,24 +1,18 @@
 body {
     margin: 0px;
     background-color: #5f73b4;
-
 }
-
-.h1_hider{
+.h1_hider {
     display: none;
 }
-
 * {
     font-size: 18px;
     padding: 0;
     outline: none;
 }
-
-.radio_text{
+.radio_text {
     color: white;
 }
-
-
 * input[type=text] {
     margin-top: 2px;
     outline: none;
@@ -29,9 +23,8 @@ body {
     background-color: rgb(57, 174, 207);
     text-indent: 5px;
     border-radius: 5px 5px 5px 5px;
-    border:none;
+    border: none;
 }
-
 * input[type=button], * input[type=submit], * input[type=reset] {
     background-color: limegreen;
     margin-top: 10px;
@@ -40,13 +33,10 @@ body {
     outline: none;
     border: none;
     transition: background-color .3s, filter .3s;
-
 }
-
 .btn_copy {
     float: right;
 }
-
 .btn_copy input[type=button] {
     width: 55px;
     outline: none;
@@ -54,7 +44,6 @@ body {
     transition: background-color .3s, filter .3s;;
     background-color: limegreen;
 }
-
 * input[type=button]:hover {
     filter: drop-shadow(0 0 6px #48CB8E);
     background-color: rgb(102, 227, 166);
@@ -62,30 +51,25 @@ body {
 * input[type=submit]:hover {
     filter: drop-shadow(0 0 6px #48CB8E);
     background-color: rgb(72, 203, 142);
-  }
+}
 * input[type=reset]:hover {
     filter: drop-shadow(0 0 6px #48CB8E);
     background-color: rgb(72, 203, 142);
-      }
+}
 .btn_copy input[type=button]:hover {
     filter: drop-shadow(0 0 6px #48CB8E);
     background-color: rgb(72, 203, 142);
 }
-
-
 .login_num [type=text], .password_num [type=text], .email_num [type=text] {
     width: 65px;
     height: 20px;
     margin-right: 3px;
     padding: 0;
     text-align: center;
-
-    text-indent: 0px;
-    text-align: center;
+    text-indent: 0;
     border-radius: 10px 10px 10px 10px;
 
 }
-
 .generator {
     width: 660px;
     margin-left: auto;
@@ -93,89 +77,38 @@ body {
     background-color: #2b52a0;
     padding: 0 2% 10px 2%;
 }
-
-
 #nav_reset, #nav_submit {
     margin-left: auto;
     margin-right: auto;
 }
-
 .nav_btn {
     margin: 0;
     display: flex;
 }
-
-
-
-
-@media (max-width: 690px){
+@media (max-width: 690px) {
     input[type="radio"] {
-        height:15px; width:15px;
+        height: 15px;
+        width: 15px;
     }
-
-    * {
-    }
-
     * input[type=button], * input[type=submit], * input[type=reset] {
         width: 195px;
     }
-
     .login_num [type=text], .password_num [type=text], .email_num [type=text] {
         width: 60px;
         height: auto;
     }
-
     .generator {
         width: 96%;
     }
-
     .btn_copy {
         outline: none;
     }
-
     .btn_copy input[type=button] {
         width: 60px;
     }
-
     #nav_reset, #nav_submit {
         width: 420px;
         margin-bottom: 20px;
     }
-
-
-
-
-
-    /*------------------------Меню------------------------*/
-
-    #head_main {
-        display: flex;
-        width: 96%;
-        text-align: center;
-        align-content: center;
-        align-items: center;
-    }
-    #head_main li {
-
-        height: 100%;
-    }
-
-    #head_main a {
-        display: flex;
-        justify-content: center;
-        justify-items: center;
-        align-items: center;
-        height: 100%;
-    }
-
-    /*---------------------------------------------*/
-
-
-    #footer {
-        width: 96%;
-    }
-
-
-
 
 }
