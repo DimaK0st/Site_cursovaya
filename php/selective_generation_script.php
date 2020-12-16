@@ -2,8 +2,8 @@
 $alphabet = array('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'v', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0');
 
 //Подключение к Базе Данных
-//$str_bd = new mysqli("localhost", "a0492513_gen_user", "zZ774488559966", "a0492513_gen_user");
-$str_bd = mysqli_connect("127.0.0.1", "root", "root", "gen_user");
+//$str_bd = new mysqli("localhost", "a0492513_generate", "zZ774488559966", "a0492513_generate");
+$str_bd = mysqli_connect("127.0.0.1", "root", "root", "generate");
 //Эта функция вызывает все остальные функции которые в свою очередь генерируют определённые значения
 
 $iter = 0;
@@ -163,49 +163,21 @@ function gen_fio($gender)
 {
     global $str_bd;
 
-    //Выбор пола для получения количества записей в базе данных
-    if ($gender == "1") {
-        $strSQL = "SELECT COUNT(`kod_name`) as counter FROM `name_men` UNION SELECT COUNT(`kod_otchestvo`) as counter FROM `otchestvo_men`
-    UNION SELECT COUNT(`kod_surname`) as counter FROM `surname_man`";
-    } elseif ($gender == "2") {
-        $strSQL = "SELECT COUNT(`kod_name`) as counter FROM `name_women` 
-UNION SELECT COUNT(`kod_otchestvo`) as counter FROM `otchestvo_women`
-UNION SELECT COUNT(`kod_surname`) as counter FROM `surname_woman`";
-    }
+    $name = exec_query("SELECT names.name FROM names WHERE names.kod_gendera = '$gender' ORDER BY rand() LIMIT 1");
+    $surname=exec_query("SELECT surnames.surname FROM surnames WHERE surnames.kod_gendera = '$gender' ORDER BY rand() LIMIT 1");
+    $otchestvo= exec_query("SELECT otchestvo.otchestvo FROM otchestvo WHERE otchestvo.kod_gendera = '$gender' ORDER BY rand() LIMIT 1");
+    return $surname . " " . $name . " " . $otchestvo;
+}
 
-    //Выполнение запроса
-    $r = mysqli_query($str_bd, $strSQL);
+function exec_query($str_query){
+    global $str_bd;
 
-    for ($i = 0; $i < mysqli_num_rows($r); $i++) {
-        $f = mysqli_fetch_array($r);
-        $arr_res_fio[$i] = $f['counter']; // В массив заносим значения с количеством записей в базах (name, otchestvo, surname)
-        //Такое решение было принято для того что бы запросы выполнялись быстрее, если без UNION, то запрос выполнялся бы 2 секунды, а сейчас 0,002секунды
-    }
-    //Переменные для генерации рандомного фио
-    $rand_name = random_int(1, $arr_res_fio[0] - 1);
-    $rand_otchestvo = random_int(1, $arr_res_fio[1] - 1);
-    $rand_surname = random_int(1, $arr_res_fio[2] - 1);
+    $result = mysqli_query($str_bd, $str_query) or die("Ошибка " . mysqli_error($str_bd));
+    return mysqli_fetch_row($result)[0];
 
-
-    if ($gender == "1") {
-        $strSQL = "SELECT `surname` , `name`, `otchestvo`
-FROM `name_men`, `otchestvo_men`, `surname_man`
-WHERE kod_name=" . $rand_name . " and kod_otchestvo=" . $rand_otchestvo . " and kod_surname=" . $rand_surname;
-    } elseif ($gender == "2") {
-        $strSQL = "SELECT `surname` , `name`, `otchestvo`
-FROM `name_women`, `otchestvo_women`, `surname_woman`
-WHERE kod_name=" . $rand_name . " and kod_otchestvo=" . $rand_otchestvo . " and kod_surname=" . $rand_surname;
-    }
-
-    $r = mysqli_query($str_bd, $strSQL);
-    //Получаем значения благодаря рандомным переменным
-    for ($i = 0; $i < mysqli_num_rows($r); $i++) {
-        $f = mysqli_fetch_array($r);
-        $res_fio = $f['surname'] . " " . $f['name'] . " " . $f['otchestvo'];
-    }
-    return $res_fio;
 
 }
+
 
 //Здесь генерируется адрес с базы данных
 function gen_address()
